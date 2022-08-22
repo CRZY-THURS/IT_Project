@@ -1,0 +1,29 @@
+http://localhost:3000/signup
+{
+	"email": "pat@email.com",
+	"password": "12345678",
+	"screen_name": "Pat",
+	"gender": "M",
+	"profile_picture": 1
+}
+
+http://localhost:3000/login
+{
+	"username": "pat@email.com",
+	"password": "12345678"
+}
+
+http://localhost:3000/addplaylist
+{
+	"name": "111",
+	"description": "222"
+}
+
+http://localhost:3000/addmusic
+{
+	"title": "2333",
+	"artist": "2333",
+	"album": "2333",
+	"genre": "2333",
+	"link": "2333"
+}

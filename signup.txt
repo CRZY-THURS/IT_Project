@@ -1,7 +1,0 @@
-{
-	"email": "pat@email.com",
-	"password": "12345678",
-	"screen_name": "Pat",
-	"gender": "M",
-	"profile_picture": 1
-}

@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const passport = require("passport");
 const User = require("../models/userModel");
+const Playlist = require("../models/playlistModel");
 
 const editUserPassword = async (req, res) => {
     User.findOne({ email: req.body.email })
@@ -36,6 +37,14 @@ const signupUser = async (req, res) => {
                 .json({ message: "User already exists" });
         }
 
+        const default_playlist = new Playlist({
+            name: "my music",
+            description: "the default playlist",
+            create_date: date,
+            is_default: true,
+            musics: [],
+        });
+
         user = new User({
             email: req.body.email,
             password: req.body.password,
@@ -43,10 +52,13 @@ const signupUser = async (req, res) => {
             gender: req.body.gender,
             profile_picture: req.body.profile_picture,
             start_date: date,
+            playlists: [default_playlist._id],
         });
 
+        default_playlist.save();
         user.save();
-        res.send({ message: "user signup successfully" });
+        res.send({ message: "user signup successful" });
+
     } catch (err) {
         console.error(err.message);
         res.status(500).send("Server Error");
@@ -54,14 +66,12 @@ const signupUser = async (req, res) => {
 };
 
 const isAuthenticatedUser = (req, res, next) => {
-    // If user is not authenticated via Passport, redirect to login page
+
     if (!req.isAuthenticated()) {
         return res.redirect("/login");
     }
     
     return next();
-    // Otherwise, proceed to next middleware function
-    // return next();
 };
 
 module.exports = {

@@ -2,6 +2,7 @@ const { default: mongoose } = require("mongoose");
 const bcrypt = require("bcryptjs");
 
 const schema = new mongoose.Schema({
+
     email: {
         type: String,
         required: true,
@@ -33,7 +34,13 @@ const schema = new mongoose.Schema({
         required: true,
     },
 
-    //playlists
+    playlists: [
+        {
+            type: mongoose.Schema.ObjectId,
+            ref: "playlist",
+        },
+    ],
+    
 });
 
 schema.methods.verifyPassword = function (password, callback) {
@@ -64,4 +71,4 @@ schema.pre("save", function save(next) {
     });
 });
 
-module.exports = mongoose.model("users", schema);
+module.exports = mongoose.model("user", schema);

@@ -5,6 +5,7 @@ const session = require("express-session"); // for managing user sessions
 const hbs = require("./handlebarHelper.js");
 const userRouter = require("./routes/userRouter");
 const authRouter = require("./routes/authRouter");
+const entityRouter = require("./routes/entityRouter");
 require("./models");
 
 // Set your app up as an express app
@@ -50,6 +51,7 @@ app.use(passport.authenticate("session"));
 // routes
 app.use("/", userRouter);
 app.use("/", authRouter);
+app.use("/", entityRouter);
 
 // Tells the app to listen on port 3000 and logs tha tinformation to the console.
 app.listen(port, () => {
