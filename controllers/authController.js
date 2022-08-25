@@ -53,6 +53,8 @@ const signupUser = async (req, res) => {
             profile_picture: req.body.profile_picture,
             start_date: date,
             playlists: [default_playlist._id],
+            pquestions: req.body.pquestions,
+            psecret: req.body.psecret,
         });
 
         default_playlist.save();
