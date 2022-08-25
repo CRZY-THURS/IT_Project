@@ -1,3 +1,7 @@
 {{#with data}}
-<p>Hello {{this.screen_name}}</p>
+
+<p>My Playlists:</p>
+{{#each this.playlists}}
+<p>{{this.name}}</p>
+{{/each}}
 {{/with}}

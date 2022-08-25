@@ -3,7 +3,21 @@ const authRouter = express.Router();
 const passport = require("passport");
 const authController = require("../controllers/authController");
 
+authRouter.get(
+    "/signup",
+    (req, res) => {
+        res.render("signup", {});
+    }
+);
+
 authRouter.post("/signup", authController.signupUser);
+
+authRouter.get(
+    "/login",
+    (req, res) => {
+        res.render("login", {flash: req.flash("error"),});
+    }
+);
 
 authRouter.post(
     "/login",

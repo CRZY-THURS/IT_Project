@@ -1,0 +1,34 @@
+{{#each flash}}
+    <p class="errorLogin">{{this}}</p>
+{{/each}}
+
+<form class="login" action="/login" method="post">
+    <div class="info_block">
+        <label for="username">Username</br>
+        <input
+            id="username"
+            name="username"
+            type="text"
+            autocomplete="username"
+            required
+        />
+    </div>
+    <div class="info_block">
+        <label for="password">Password</br>
+        <input
+            id="password"
+            name="password"
+            type="password"
+            autocomplete="password"
+            required
+        />
+    </div>
+    <div>
+        <button type="submit">Log In</button>
+    </div>
+</form>
+
+<div>
+    <a href="./signup">Sign Up</br>
+    <a href="/login">forgot password</a>
+</div>

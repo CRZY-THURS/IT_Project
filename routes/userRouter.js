@@ -16,11 +16,5 @@ userRouter.get(
     userController.viewAllMusics,
 );
 
-userRouter.get(
-    "/myplaylists",
-    authController.isAuthenticatedUser,
-    userController.viewMyPlaylists,
-);
-
 // export the router
 module.exports = userRouter;

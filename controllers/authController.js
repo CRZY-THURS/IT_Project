@@ -49,15 +49,15 @@ const signupUser = async (req, res) => {
             email: req.body.email,
             password: req.body.password,
             screen_name: req.body.screen_name,
-            gender: req.body.gender,
-            profile_picture: req.body.profile_picture,
+            gender: "U",
+            profile_picture: 1,
             start_date: date,
             playlists: [default_playlist._id],
         });
 
         default_playlist.save();
         user.save();
-        res.send({ message: "user signup successful" });
+        return res.redirect("/login");
 
     } catch (err) {
         console.error(err.message);
