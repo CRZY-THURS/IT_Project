@@ -74,8 +74,34 @@ const isAuthenticatedUser = (req, res, next) => {
     return next();
 };
 
+const getPquestions = async (req, res) => {
+    try {
+        const user = await User.findOne({ email: req.body.email })
+        .lean
+        .populate({path: "pqusetions"});
+        res.send(user.pquestions);
+    }catch(error){
+        res.json(error);
+    }
+}
+
+const forgetPassword = async (req, res) => {
+    User.findOne({ email: req.body.email })
+        .then((user) => {
+            if (user.psecret === req.body.psecret) {
+                res.send({ message: "Correct Answer!" });
+            } else {
+                res.send({ message: "Incorrect Answer!" });
+            }
+        }).catch((error) => {
+            res.json(error);
+        }
+        );
+}
 module.exports = {
     signupUser,
     isAuthenticatedUser,
     editUserPassword,
+    forgetPassword,
+    getPquestions,
 };
