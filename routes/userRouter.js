@@ -11,6 +11,12 @@ userRouter.get(
 );
 
 userRouter.get(
+    "/home/:_id",
+    authController.isAuthenticatedUser,
+    userController.myPlaylist,
+);
+
+userRouter.get(
     "/library",
     authController.isAuthenticatedUser,
     userController.viewAllMusics,

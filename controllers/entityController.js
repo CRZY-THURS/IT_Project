@@ -20,8 +20,11 @@ const addPlaylist = async (req, res) => {
             { $push: { "playlists": playlist._id } }
         )
 
-        playlist.save();
-        res.send({ message: "add playlist successful" });
+        playlist.save().then(
+            setTimeout(function () {
+                res.redirect("/home");
+            }, 1000)
+        );
 
     } catch (err) {
         console.error(err.message);
@@ -49,8 +52,11 @@ const addMusic = async (req, res) => {
             { $push: { "musics": music._id } }
         );
 
-        music.save();
-        res.send({ message: "add music successful" });
+        music.save().then(
+            setTimeout(function () {
+                res.redirect("/home");
+            }, 1000)
+        );
 
     } catch (err) {
         console.error(err.message);

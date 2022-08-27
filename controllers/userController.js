@@ -11,8 +11,31 @@ const homePage = async (req, res) => {
         {}
     ).populate({ path: "playlists" }).lean();
 
+    const playlist = await Playlist.findOne(
+        { _id: user.playlists[0]._id },
+        {}
+    ).populate({ path: "musics" }).lean();
+
     return res.render("home", {
+        playlist: playlist,
         data: user,
+    });
+};
+
+const myPlaylist = async (req, res) => {
+    const user = await User.findOne(
+        { _id: req.user._id },
+        {}
+    ).populate({ path: "playlists" }).lean();
+
+    const playlist = await Playlist.findOne(
+        { _id: req.params._id },
+        {}
+    ).populate({ path: "musics" }).lean();
+
+    return res.render("myPlaylist", {
+        data: user,
+        playlist: playlist,
     });
 };
 
@@ -26,4 +49,5 @@ const viewAllMusics = async (req, res) => {
 module.exports = {
     homePage,
     viewAllMusics,
+    myPlaylist,
 };

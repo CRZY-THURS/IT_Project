@@ -6,7 +6,9 @@ const hbs = exphbs.create({
 
     // helper functions
     helpers: {
-        
+        equals: function (a, b) {
+            return (a == b);
+        },
     },
 });
 
