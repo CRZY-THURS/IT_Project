@@ -1,0 +1,45 @@
+<nav class="nav-top">
+    <div class="logo">
+        <img src="/pictures/logo1.png" height="85px">
+    </div>
+</nav>
+
+<div style="height: 3px; background: #9E67EF;"></div>
+
+<form class="add-music" action="/addmusic" method="post">
+    <div class="info_block">
+        <label for="title">title</br>
+        <input
+            id="title"
+            name="title"
+            type="text"
+            required
+        />
+    </div>
+    <div class="info_block">
+        <label for="artist">artist</br>
+        <input
+            id="artist"
+            name="artist"
+            type="text"
+        />
+    </div>
+    <div class="info_block">
+        <label for="album">album</br>
+        <input
+            id="album"
+            name="album"
+            type="text"
+        />
+    </div>
+    <select name="genre">
+        <option value="pop" selected>pop</option>
+        <option value="indie">indie</option>
+        <option value="rock">rock</option>
+        <option value="rap">rap</option>
+        <option value="classical">classical</option>
+    </select>
+    <div>
+        <button type="submit">Add Music</button>
+    </div>
+</form>

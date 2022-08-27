@@ -9,6 +9,20 @@ entityRouter.post(
     entityController.addMusic,
 );
 
+entityRouter.get(
+    "/addplaylist",
+    (req, res) => {
+        res.render("createPlaylist", {});
+    }
+);
+
+entityRouter.get(
+    "/addmusic",
+    (req, res) => {
+        res.render("addMusic", {});
+    }
+);
+
 entityRouter.post(
     "/addplaylist",
     authController.isAuthenticatedUser,

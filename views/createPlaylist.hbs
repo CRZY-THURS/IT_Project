@@ -1,0 +1,30 @@
+<nav class="nav-top">
+    <div class="logo">
+        <img src="/pictures/logo1.png" height="85px">
+    </div>
+</nav>
+
+<div style="height: 3px; background: #9E67EF;"></div>
+
+<form class="add-playlist" action="/addplaylist" method="post">
+    <div class="info_block">
+        <label for="name">name</br>
+        <input
+            id="name"
+            name="name"
+            type="text"
+            required
+        />
+    </div>
+    <div class="info_block">
+        <label for="description">description</br>
+        <input
+            id="description"
+            name="description"
+            type="text"
+        />
+    </div>
+    <div>
+        <button type="submit">Create Playlist</button>
+    </div>
+</form>
