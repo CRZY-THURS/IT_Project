@@ -70,9 +70,11 @@ const getAllMusic = async (req, res) => {
 
         const user = await User.findOne({ _id: req.user._id },{}).lean();
 
-        var musics = Music.find().lean();
+        const playlist0_id = user.playlists[0];
 
-        res.send(musics);
+        const playlist0 = Playlist.findById(playlist0_id);
+
+        res.send(playlist0);
 
     } catch (err) {
         console.error(err.message);
