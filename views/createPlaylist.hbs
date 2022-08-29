@@ -1,15 +1,14 @@
+<section class="addlist-section">
 <nav class="nav-top">
-    <div class="logo">
-        <img src="/pictures/logo1.png" height="85px">
+    <div>
+        <img class="logo" src="/pictures/logo1.png">
     </div>
 </nav>
 
-<div style="height: 3px; background: #9E67EF;"></div>
-
-<form class="add-playlist" action="/addplaylist" method="post">
+<form class="add-new" action="/addplaylist" method="post">
     <div class="info_block">
-        <label for="name">name</br>
-        <input
+        <label class="input_block" for="name">name</br>
+        <input class="input_block"
             id="name"
             name="name"
             type="text"
@@ -17,14 +16,15 @@
         />
     </div>
     <div class="info_block">
-        <label for="description">description</br>
-        <input
+        <label class="input_block" for="description">description</br>
+        <input class="input_block"
             id="description"
             name="description"
             type="text"
         />
     </div>
-    <div>
-        <button type="submit">Create Playlist</button>
+    <div class="info_block">
+        <button class="bottons" class="input_block" type="submit">Create Playlist</button>
     </div>
 </form>
+</section>

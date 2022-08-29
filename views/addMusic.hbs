@@ -1,15 +1,14 @@
+<section class="addmusic-section">
 <nav class="nav-top">
-    <div class="logo">
-        <img src="/pictures/logo1.png" height="85px">
+    <div>
+        <img class="logo" src="/pictures/logo1.png">
     </div>
 </nav>
 
-<div style="height: 3px; background: #9E67EF;"></div>
-
-<form class="add-music" action="/addmusic" method="post">
+<form class="add-new" action="/addmusic" method="post">
     <div class="info_block">
-        <label for="title">title</br>
-        <input
+        <label class="input_block" for="title">title</br>
+        <input class="input_block"
             id="title"
             name="title"
             type="text"
@@ -17,29 +16,30 @@
         />
     </div>
     <div class="info_block">
-        <label for="artist">artist</br>
-        <input
+        <label class="input_block" for="artist">artist</br>
+        <input class="input_block"
             id="artist"
             name="artist"
             type="text"
         />
     </div>
     <div class="info_block">
-        <label for="album">album</br>
-        <input
+        <label class="input_block" for="album">album</br>
+        <input class="input_block"
             id="album"
             name="album"
             type="text"
         />
     </div>
-    <select name="genre">
-        <option value="pop" selected>pop</option>
-        <option value="indie">indie</option>
-        <option value="rock">rock</option>
-        <option value="rap">rap</option>
-        <option value="classical">classical</option>
+    <select class="info_block" name="genre">
+        <option class="input_block" value="pop" selected>pop</option>
+        <option class="input_block" value="indie">indie</option>
+        <option class="input_block" value="rock">rock</option>
+        <option class="input_block" value="rap">rap</option>
+        <option class="input_block" value="classical">classical</option>
     </select>
-    <div>
-        <button type="submit">Add Music</button>
+    <div class="info_block">
+        <button class="bottons" class="input_block" type="submit">Add Music</button>
     </div>
 </form>
+</section>
