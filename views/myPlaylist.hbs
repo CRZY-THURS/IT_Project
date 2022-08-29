@@ -1,59 +1,52 @@
+<section class="home-section">
 <nav class="nav-top">
-    <div class="logo">
-        <img src="/pictures/logo1.png" height="85px">
+    <div>
+        <img class="logo" src="/pictures/logo1.png">
     </div>
 </nav>
-
-<div style="height: 3px; background: #9E67EF;"></div>
 
 <div class="nav-left">
     <p>Add New</p>
     <a href="/addplaylist">
-        <div class="mp-button"><p> + Create Playlist</p></div>
+        <button class="nav-button">+ Create Playlist</button>
     </a>
     <a href="/addmusic">
-        <div class="mp-button"><p> + Add New Music</p></div>
+        <button class="nav-button">+ Add New Music</button>
     </a>
-
-    <div style="height: 15px;"></div>
 
     <p>Playlists</p>
     <ul class="playlists">
         <li>
             {{#each data.playlists}}
             <a href="/home/{{this._id}}">
-            <div class="playlist">
-            <p>{{this.name}}</p>
-            </div>
+                <button class="playlist">
+                {{this.name}}
+                </button>
             </a>
             {{/each}}
         </li>
     </ul>
 </div>
 
-<div style="height: 100%; width: 3px; float: left; background: #573a82;"></div>
-
 <div class="rhs">
+    <p class="playlist-name">🎶{{playlist.name}}</p>
     <table class="playlist-table">
-	    <tbody>
-            <tr class="heading" id="heading1">
-		        <th colspan="4">🎶{{playlist.name}}</th>
-	        </tr>
-            <tr class="heading" id="heading2">
-		        <th>title</th>
-		        <th>artist</th>
-		        <th>album</th>
-                <th>genre</th>
+        {{!-- colspan="4" --}}
+            <tr class="heading">
+		        <th class="title">title</th>
+		        <th class="title">artist</th>
+		        <th class="title">album</th>
+                <th class="title">genre</th>
 	        </tr>
 
             {{#each playlist.musics}}
-	        <tr>
-		        <td>{{this.title}}</td>
-                <td>{{this.artist}}</td>
-                <td>{{this.album}}</td>
-                <td>{{this.genre}}</td>
+	        <tr class="entity" >
+		        <td class="title">{{this.title}}</td>
+                <td class="title">{{this.artist}}</td>
+                <td class="title">{{this.album}}</td>
+                <td class="title">{{this.genre}}</td>
 	        </tr>
             {{/each}}
-        </tbody>
     </table>
 </div>
+</section>
