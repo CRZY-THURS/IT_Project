@@ -40,18 +40,16 @@ const schema = new mongoose.Schema({
             ref: "playlist",
         },
     ],
-    pquestions: [
-        {
+
+    pquestions: {
             type: String,
-            required: true,
-        }
-    ],
-    psecret: [
-        {
-            type: String,
-            required: true,
-        },
-    ]
+            required: false,
+    },
+
+    psecret: {
+        type: String,
+        required: false,
+    },
 });
 
 schema.methods.verifyPassword = function (password, callback) {
