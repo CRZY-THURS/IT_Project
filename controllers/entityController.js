@@ -64,7 +64,28 @@ const addMusic = async (req, res) => {
     };
 };
 
+const getAllMusic = async (req, res) => {
+    try {
+        var date = new Date();
+
+        const user = await User.findOne({ _id: req.user._id },{}).lean();
+
+        const playlist = await Playlist.findOne(
+            { _id: user.playlists[0]._id },
+            {}
+        ).populate({ path: "musics" }).lean();
+
+
+        res.send(playlist);
+
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).send("Server Error");
+    };
+};
+
 module.exports = {
     addPlaylist,
     addMusic,
+    getAllMusic,
 };
