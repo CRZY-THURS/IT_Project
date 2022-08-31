@@ -4,22 +4,22 @@
     </div>
 </nav>
 
-<div style="height: 3px; background: #9E67EF;"></div>
 
 <form class="register" action="/signup" method="post">
 
     <div class="info_block">
         <label for="email">Username (email)</label></br>
-        <input id="email" 
-               name="email" 
-               type="email"
-               required 
+        <input class="input_block"
+            id="email" 
+            name="email" 
+            type="email"
+            required 
         />
     </div>
 
     <div class="info_block">
         <label for="password">Password</label></br>
-        <input
+        <input class="input_block"
             id="password"
             name="password"
             type="text"
@@ -30,15 +30,20 @@
 
     <div class="info_block">
         <label for="screen_name">Screen name</label></br>
-        <input id="screen_name" 
-            name="screen_name" 
-            type="text" 
-            required 
+        <input class="input_block"
+        id="screen_name" 
+        name="screen_name" 
+        type="text" 
+        required 
         />
     </div>
 
     <div>
-        <button type="submit">Submit</button>
+        <button type="submit" class="bottons">Submit</button>
+    </div>
+
+    <div>
+        <a href="/login">Return</a>
     </div>
 
 </form>
