@@ -1,0 +1,16 @@
+<section class="addmusic-section">
+<nav class="nav-top">
+    <div>
+        <img class="logo" src="/pictures/logo1.png">
+    </div>
+</nav>
+
+<form class="add-to-playlist" action="./{{playlist._id}}" method="post">
+    {{#each musics}}
+        <label><input name="musics[]" type="checkbox" value="{{this._id}}" />{{this.title}} </label><br>
+    {{/each}}
+    <div class="info_block">
+        <button class="bottons" class="input_block" type="submit">Add Music to {{playlist.name}}</button>
+    </div>
+</form>
+</section>
