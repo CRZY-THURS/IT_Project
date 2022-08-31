@@ -94,7 +94,7 @@ body {
 
 .nav-left p {
     color: #A6A6A6;
-    text-align: center;
+    margin-left: 2rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
