@@ -5,7 +5,6 @@
     </div>
 </nav>
 
-<div style="height: 3px; background: #9E67EF;"></div>
 
 {{#each flash}}
     <p class="errorLogin">{{this}}</p>
@@ -14,7 +13,7 @@
 <form class="login" action="/login" method="post">
     <div class="info_block">
         <label for="username">Username</br>
-        <input
+        <input class="input_block"
             id="username"
             name="username"
             type="text"
@@ -24,7 +23,7 @@
     </div>
     <div class="info_block">
         <label for="password">Password</br>
-        <input
+        <input class="input_block"
             id="password"
             name="password"
             type="password"
@@ -33,11 +32,12 @@
         />
     </div>
     <div>
-        <button type="submit">Log In</button>
+        <button type="submit" class="bottons">Log In</button>
+    </div>
+
+    <div>
+        <a href="./signup">Sign Up</br>
+        <a href="/login">Forgot Password</a>
     </div>
 </form>
 
-<div class="links">
-    <a href="./signup">Sign Up</br>
-    <a href="/login">Forgot Password</a>
-</div>
