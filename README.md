@@ -1,1 +1,37 @@
-# IT_Project
+
+### Code Structure
+Controller
+Models
+public
+routes
+views
+app.js
+
+### Run
+1. Run `npm install` to install packages.
+2. Run `npm start`.
+3. Browser visits `localhost:3000`.
+
+### Environment Variables
+Frontend:
+  ```
+  HTML
+  CSS
+  Handlebars
+  ```
+Backend:
+  ```
+  Javascript
+  Node.js
+  
+  ```
+Deployment:
+  ```
+  Heroku
+  
+  ```
+  
+
+# Documents
+
+Confluence URL: ******.
