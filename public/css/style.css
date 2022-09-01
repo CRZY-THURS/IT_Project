@@ -94,7 +94,7 @@ body {
 
 .nav-left p {
     color: #A6A6A6;
-    text-align: center;
+    margin-left: 2rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
@@ -158,14 +158,19 @@ body {
 
 .info_block {
     font-size: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
+
 .input_block {
+    opacity: 0.8;
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
 
 
 .bottons {
+    font-size: 1rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
     padding: 0.2rem;
@@ -173,4 +178,30 @@ body {
 
 .add-to-playlist {
     color: #ffffff;
+}
+
+.register {
+    background: rgba(74, 74, 74, 0.3);
+    height: 60%;
+    width: 70%;
+    margin: auto;
+    color: white;
+    padding: 5rem;
+}
+
+.login {
+    background: rgba(74, 74, 74, 0.3);
+    height: 60%;
+    width: 70%;
+    margin: auto;
+    color: white;
+    padding: 5rem;
+}
+
+a:hover{
+    color:darkorchid;
+}
+
+.bottons:hover{
+    background-color: #595856;
 }

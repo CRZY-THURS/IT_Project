@@ -43,5 +43,11 @@ entityRouter.post(
     entityController.addMusicToPlaylist,
 );
 
+entityRouter.get(
+    "/all-music",
+    authController.isAuthenticatedUser,
+    entityController.getAllMusic,
+);
+
 // export the router
 module.exports = entityRouter;
