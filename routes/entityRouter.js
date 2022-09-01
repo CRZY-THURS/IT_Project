@@ -11,6 +11,7 @@ entityRouter.post(
 
 entityRouter.get(
     "/addplaylist",
+    authController.isAuthenticatedUser,
     (req, res) => {
         res.render("createPlaylist", {});
     }
@@ -18,6 +19,7 @@ entityRouter.get(
 
 entityRouter.get(
     "/addmusic",
+    authController.isAuthenticatedUser,
     (req, res) => {
         res.render("addMusic", {});
     }
@@ -27,6 +29,18 @@ entityRouter.post(
     "/addplaylist",
     authController.isAuthenticatedUser,
     entityController.addPlaylist,
+);
+
+entityRouter.get(
+    "/addmusic/:_id",
+    authController.isAuthenticatedUser,
+    entityController.getMusicForAdding,
+);
+
+entityRouter.post(
+    "/addmusic/:_id",
+    authController.isAuthenticatedUser,
+    entityController.addMusicToPlaylist,
 );
 
 entityRouter.get(

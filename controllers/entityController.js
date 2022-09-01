@@ -64,6 +64,39 @@ const addMusic = async (req, res) => {
     };
 };
 
+const getMusicForAdding = async (req, res) => {
+    const playlist = await Playlist.findOne(
+        { _id: req.params._id },
+        {}
+    ).lean();
+
+    const allMusics = await Music.find({}).lean();
+
+    return res.render("addMusicToPlaylist", {
+        musics: allMusics,
+        playlist: playlist,
+    });
+};
+
+const addMusicToPlaylist = async (req, res) => {
+    try {
+        const musics = req.body.musics;
+
+        await Playlist.updateOne(
+            { _id: req.params._id },
+            { $addToSet: { "musics": { $each: musics } } }
+        ).then(
+            setTimeout(function () {
+                res.redirect("/home/" + req.params._id);
+            }, 500)
+        );
+
+    } catch (err) {
+            console.error(err.message);
+            res.status(500).send("Server Error");
+        };
+};
+
 const getAllMusic = async (req, res) => {
     try {
         var date = new Date();
@@ -87,5 +120,7 @@ const getAllMusic = async (req, res) => {
 module.exports = {
     addPlaylist,
     addMusic,
+    getMusicForAdding,
+    addMusicToPlaylist,
     getAllMusic,
 };
