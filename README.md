@@ -23,12 +23,10 @@ Backend:
   ```
   Javascript
   Node.js
-  
   ```
 Deployment:
   ```
   Heroku
-  
   ```
   
 
