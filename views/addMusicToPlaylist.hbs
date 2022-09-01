@@ -6,11 +6,12 @@
 </nav>
 
 <form class="add-to-playlist" action="./{{playlist._id}}" method="post">
+    <p class="add-music-title">Select from the Library</p>
     {{#each musics}}
-        <label><input name="musics[]" type="checkbox" value="{{this._id}}" />{{this.title}} </label><br>
+        <div class="atp"><label><input class="atp-input" name="musics[]" type="checkbox" value="{{this._id}}" />{{this.title}} </label></div>
     {{/each}}
     <div class="info_block">
-        <button class="bottons" class="input_block" type="submit">Add Music to {{playlist.name}}</button>
+        <button class="bottons" id="atp-btn" type="submit">Add to {{playlist.name}}</button>
     </div>
 </form>
 </section>

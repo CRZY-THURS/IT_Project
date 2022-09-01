@@ -16,7 +16,7 @@ const homePage = async (req, res) => {
         {}
     ).populate({ path: "musics" }).lean();
 
-    return res.render("home", {
+    return res.render("myPlaylist", {
         playlist: playlist,
         data: user,
     });

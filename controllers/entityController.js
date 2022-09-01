@@ -90,12 +90,12 @@ const addMusicToPlaylist = async (req, res) => {
                 res.redirect("/home/" + req.params._id);
             }, 500)
         );
-        
+
     } catch (err) {
             console.error(err.message);
             res.status(500).send("Server Error");
         };
-    };
+};
 
 const getAllMusic = async (req, res) => {
     try {
