@@ -28,7 +28,7 @@ const addPlaylist = async (req, res) => {
 
     } catch (err) {
         console.error(err.message);
-        res.status(500).send("Server Error");
+        res.status(500);
     };
 };
 
@@ -60,7 +60,7 @@ const addMusic = async (req, res) => {
 
     } catch (err) {
         console.error(err.message);
-        res.status(500).send("Server Error");
+        res.status(500);
     };
 };
 
@@ -93,7 +93,7 @@ const addMusicToPlaylist = async (req, res) => {
 
     } catch (err) {
             console.error(err.message);
-            res.status(500).send("Server Error");
+            res.status(500);
         };
 };
 
@@ -113,7 +113,7 @@ const getAllMusic = async (req, res) => {
 
     } catch (err) {
         console.error(err.message);
-        res.status(500).send("Server Error");
+        res.status(500);
     };
 };
 
