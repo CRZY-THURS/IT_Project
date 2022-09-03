@@ -3,6 +3,7 @@ const authRouter = express.Router();
 const passport = require("passport");
 const authController = require("../controllers/authController");
 
+// this router contains URLs that related to user authentication
 authRouter.get(
     "/signup",
     (req, res) => {

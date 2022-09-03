@@ -3,7 +3,6 @@ const User = require("../models/userModel");
 const Playlist = require("../models/playlistModel");
 const Music = require("../models/musicModel");
 
-
 // handle request to get all data
 const homePage = async (req, res) => {
     const user = await User.findOne(
@@ -22,6 +21,7 @@ const homePage = async (req, res) => {
     });
 };
 
+// an backend-api for rendering a playlist
 const myPlaylist = async (req, res) => {
     const user = await User.findOne(
         { _id: req.user._id },
@@ -39,6 +39,7 @@ const myPlaylist = async (req, res) => {
     });
 };
 
+// an backend-api for getting all music in the library
 const viewAllMusics = async (req, res) => {
     const allMusics = await Music.find({}).lean();
     return res.render("allMusics", {

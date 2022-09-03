@@ -3,7 +3,7 @@ const userRouter = express.Router();
 const userController = require("../controllers/userController");
 const authController = require("../controllers/authController");
 
-// add a route to handle the GET request for all patients
+// this router contains URLs that related to page views
 userRouter.get(
     "/home",
     authController.isAuthenticatedUser,

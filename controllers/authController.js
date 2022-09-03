@@ -3,6 +3,7 @@ const passport = require("passport");
 const User = require("../models/userModel");
 const Playlist = require("../models/playlistModel");
 
+// an backend-api for password changing
 const editUserPassword = async (req, res) => {
     User.findOne({ email: req.body.email })
         .then((user) => {
@@ -27,6 +28,7 @@ const editUserPassword = async (req, res) => {
         });
 };
 
+// an backend-api for user signup
 const signupUser = async (req, res) => {
     var date = new Date();
     try {
@@ -65,15 +67,15 @@ const signupUser = async (req, res) => {
     }
 };
 
+// an backend-api for user authentication
 const isAuthenticatedUser = (req, res, next) => {
-
     if (!req.isAuthenticated()) {
         return res.redirect("/login");
     }
-    
     return next();
 };
 
+// an backend-api for getting user preset questions
 const getPquestions = async (req, res) => {
     try {
         const user = await User.findOne({ email: req.body.email })
@@ -85,6 +87,7 @@ const getPquestions = async (req, res) => {
     }
 }
 
+// an backend-api for validating user preset questions
 const forgetPassword = async (req, res) => {
     User.findOne({ email: req.body.email })
         .then((user) => {
@@ -98,6 +101,7 @@ const forgetPassword = async (req, res) => {
         }
         );
 }
+
 module.exports = {
     signupUser,
     isAuthenticatedUser,

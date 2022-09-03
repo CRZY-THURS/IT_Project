@@ -1,5 +1,6 @@
 const { default: mongoose } = require("mongoose");
 
+// a database schema for the playlist collection
 const schema = new mongoose.Schema({
     
     name: {

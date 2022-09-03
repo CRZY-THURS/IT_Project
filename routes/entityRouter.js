@@ -3,6 +3,7 @@ const entityRouter = express.Router();
 const entityController = require("../controllers/entityController");
 const authController = require("../controllers/authController");
 
+// this router contains URLs that related to data manipulation
 entityRouter.post(
     "/addmusic",
     authController.isAuthenticatedUser,

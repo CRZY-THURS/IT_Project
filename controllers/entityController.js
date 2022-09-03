@@ -3,6 +3,7 @@ const User = require("../models/userModel");
 const Playlist = require("../models/playlistModel");
 const Music = require("../models/musicModel");
 
+// an backend-api for adding playlist
 const addPlaylist = async (req, res) => {
     var date = new Date();
     try {
@@ -32,6 +33,7 @@ const addPlaylist = async (req, res) => {
     };
 };
 
+// an backend-api for adding music to library
 const addMusic = async (req, res) => {
     try {
         var date = new Date();
@@ -64,6 +66,7 @@ const addMusic = async (req, res) => {
     };
 };
 
+// an backend-api for getting addMusicToPlaylist page
 const getMusicForAdding = async (req, res) => {
     const playlist = await Playlist.findOne(
         { _id: req.params._id },
@@ -78,6 +81,7 @@ const getMusicForAdding = async (req, res) => {
     });
 };
 
+// an backend-api for adding music to playlist
 const addMusicToPlaylist = async (req, res) => {
     try {
         const musics = req.body.musics;
@@ -97,18 +101,16 @@ const addMusicToPlaylist = async (req, res) => {
         };
 };
 
+// an backend-api for getting all musics in default playlist
 const getAllMusic = async (req, res) => {
     try {
         var date = new Date();
-
         const user = await User.findOne({ _id: req.user._id },{}).lean();
 
         const playlist = await Playlist.findOne(
             { _id: user.playlists[0]._id },
             {}
         ).populate({ path: "musics" }).lean();
-
-
         res.send(playlist);
 
     } catch (err) {

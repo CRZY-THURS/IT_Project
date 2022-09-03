@@ -1,6 +1,7 @@
 const { default: mongoose } = require("mongoose");
 const bcrypt = require("bcryptjs");
 
+// a database schema for the user collection
 const schema = new mongoose.Schema({
 
     email: {
