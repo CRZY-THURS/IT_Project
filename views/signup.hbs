@@ -7,8 +7,10 @@
 
 <form class="register" action="/signup" method="post">
 
+    <div class="signup-inputs">
+    <div class="signup-left">
     <div class="info_block">
-        <label for="email">Username (email)</label></br>
+        <label for="email">Email</label></br>
         <input class="input_block"
             id="email" 
             name="email" 
@@ -37,13 +39,40 @@
         required 
         />
     </div>
+    </div>
 
-    <div>
-        <button type="submit" class="bottons">Submit</button>
+    <div class="signup-right">
+    <div class="info_block">
+    <label>Security questions<br>
+    <select class="info_block_selection" name="question">
+        <option style="color: black" class="input_block" value="1" selected>In what city were you born?</option>
+        <option style="color: black" class="input_block" value="2">What is the name of your first pet?</option>
+        <option style="color: black" class="input_block" value="3">What is your mother's first name?</option>
+        <option style="color: black" class="input_block" value="4">What high school did you attend?</option>
+        <option style="color: black" class="input_block" value="5">Where was your primary school?</option>
+        <option style="color: black" class="input_block" value="6">What was the make of your first car?</option>
+        <option style="color: black" class="input_block" value="7">What was your favorite food?</option>
+        <option style="color: black" class="input_block" value="8">Where did you meet your spouse?</option>
+        <option style="color: black" class="input_block" value="9">What year was your mother born?</option>
+    </select>
+    </label>
+    </div>
+
+    <div class="info_block">
+        <label for="secret">Answer</label></br>
+        <input class="input_block"
+        id="secret" 
+        name="secret" 
+        type="text" 
+        required 
+        />
+    </div>
+    </div>
     </div>
 
     <div>
-        <a href="/login">Return</a>
+        <button type="submit" class="btn-hover color-8">Submit</button>
     </div>
+
 
 </form>

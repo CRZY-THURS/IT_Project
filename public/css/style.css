@@ -61,7 +61,7 @@ body {
     grid-template-areas: 
         "header header"
         "menu main";
-    }
+}
 
 /* assign regions of the page to the grid */
 .nav-top { grid-area: header; }
@@ -228,6 +228,26 @@ body {
     color: white;
     padding: 5rem;
 }
+.signup-left {
+    grid-area: left;
+    float: left;
+    margin-right: 4rem;
+}
+.signup-right {
+    grid-area: right;
+}
+.info_block_selection {
+    font-size: 1.6rem;
+    margin-top: 1.2rem;
+    margin-bottom: 1rem;
+}
+.signup-inputs {
+    margin-bottom: 1rem;
+    display: grid;
+    grid-template-areas: 
+        "left right";
+}
+
 /* login page */
 .login {
     background: rgba(74, 74, 74, 0.3);
