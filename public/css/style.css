@@ -185,11 +185,12 @@ body {
 /* add musics and playlists pages */
 .add-new {
     background: rgba(74, 74, 74, 0.3);
-    height: 60%;
+    height: 70%;
     width: 70%;
     margin: auto;
     color: white;
     padding: 5rem;
+    padding-top: 3rem;
 }
 .info_block {
     font-size: 2rem;
