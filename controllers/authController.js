@@ -28,6 +28,30 @@ const editUserPassword = async (req, res) => {
         });
 };
 
+const editUserName = async (req, res) => {
+    User.findOne({ email: req.body.email })
+        .then((user) => {
+            if (user) {
+                (user.screen_name = req.body.screen_name),
+                user
+                    .save()
+                    .then(() =>
+                        res.send({
+                            message: "names changed successfully",
+                        })
+                    )
+                    .catch((error) => {
+                        res.json(error);
+                    });
+            } else if (!user) {
+                res.send({ message: "no such user" });
+            }
+        })
+        .catch((error) => {
+            res.json(error);
+        });
+};
+
 // an backend-api for user signup
 const signupUser = async (req, res) => {
     var date = new Date();
@@ -110,4 +134,5 @@ module.exports = {
     editUserPassword,
     forgetPassword,
     getPquestions,
+    editUserName,
 };
