@@ -5,12 +5,11 @@
     </div>
 </nav>
 
-
-{{#each flash}}
-    <p class="errorLogin">{{this}}</p>
-{{/each}}
-
 <form class="login" action="/login" method="post">
+    {{#each flash}}
+    <p class="error-login">{{this}}</p>
+    {{/each}}
+    
     <div class="info_block">
         <label for="username">Email</br>
         <input class="input_block"
@@ -37,7 +36,7 @@
 
     <div style="margin-top: 2rem">
         <a href="./signup">Sign Up</br>
-        <a href="/login">Forgot Password</a>
+        <a href="./changepassword">Forgot Password</a>
     </div>
 </form>
 

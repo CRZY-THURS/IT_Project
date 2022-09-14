@@ -210,7 +210,6 @@ body {
     margin-bottom: 1rem;
     padding: 0.2rem;
 }
-
 .add-to-playlist {
     color: #ffffff;
     background: rgba(74, 74, 74, 0.7);
@@ -220,6 +219,7 @@ body {
     margin-left: 25%;
     margin-right: 25%;
 }
+
 /* login and register page */
 .register {
     background: rgba(74, 74, 74, 0.3);
@@ -258,9 +258,35 @@ body {
     color: white;
     padding: 5rem;
 }
-
+.error-login {
+    color: red;
+}
 a:hover{
     color:darkorchid;
+}
+
+/* change password page */
+.change-password {
+    background: rgba(74, 74, 74, 0.3);
+    height: 60%;
+    width: 70%;
+    margin: auto;
+    color: white;
+    padding: 5rem;
+}
+.change-password-left {
+    grid-area: left;
+    float: left;
+    margin-right: 4rem;
+}
+.change-password-right {
+    grid-area: right;
+}
+.change-password-inputs {
+    margin-bottom: 3rem;
+    display: grid;
+    grid-template-areas: 
+        "left right";
 }
 
 /* add music to a playlist */

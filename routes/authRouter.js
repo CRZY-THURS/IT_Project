@@ -31,5 +31,14 @@ authRouter.post(
     }
 );
 
+authRouter.get(
+    "/changepassword",
+    (req, res) => {
+        res.render("changePassword", {});
+    }
+);
+
+authRouter.post("/changepassword", authController.editUserPassword);
+
 // export the router
 module.exports = authRouter;
