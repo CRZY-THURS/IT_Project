@@ -8,9 +8,10 @@ const editUserPassword = async (req, res) => {
     User.findOne({ email: req.body.email })
         .then((user) => {
             if (user) {
-                (user.password = req.body.password),
-                user
-                    .save()
+                if ((user.pquestions == req.body.question) && (user.psecret == req.body.secret)) {
+                    (user.password = req.body.password),
+                
+                    user.save()
                     .then(() =>
                         res.send({
                             message: "password changed successfully",
@@ -19,6 +20,12 @@ const editUserPassword = async (req, res) => {
                     .catch((error) => {
                         res.json(error);
                     });
+                } else {
+                    res.send({
+                        message: "incorrect security answer",
+                    })
+                }
+                
             } else if (!user) {
                 res.send({ message: "no such user" });
             }
