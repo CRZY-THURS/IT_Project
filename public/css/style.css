@@ -102,20 +102,64 @@ body {
     box-shadow: 0 4px 15px 0 rgba(45, 54, 65, 0.75);
 }
 
-/* left nav bar in main page */
+/* nav bar in main page */
 .nav-top {
     align-items: center;
-    text-align: center;
     background: black;
 }
 .logo {
     height: 5rem;
+    margin-left: 47%;
+    float: left;
+    overflow: hidden;
 }
 .nav-left {
     background: #0D0D0D;
     font-size: 1.5rem;
     height: 100%;
     width: 100%;
+}
+.dd-menu {
+    margin-left: 90%;
+    width : 9%;
+    background: black;
+    position: absolute;
+    box-sizing: border-box;
+    height: 5rem;
+} 
+span {
+    padding : 30px;
+    box-sizing: border-box;
+    height: 5rem;
+    background : #000000; 
+    color : white;
+    font-size : 1.4em;
+    cursor : pointer;
+    display: block;
+    text-align: center;
+}
+.slide {
+    background: gray;
+    color: white;
+    clear:both;
+    width:100%;
+    height:0px;
+    overflow: hidden;
+    text-align: center;
+    transition: height 1s ease;
+}
+.slide li {padding : 1.5rem;}
+.slide li a{
+    color: #ffffff;
+    text-decoration-line: none;
+    font-size: 1.4rem;
+}
+#touch {position: absolute; opacity: 0; height: 0px;}    
+#touch:hover + .slide {
+    height: auto;
+}
+.slide:hover {
+    height: auto;
 }
 
 /* right hand side of main page: the playlist */
