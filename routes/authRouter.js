@@ -33,12 +33,23 @@ authRouter.post(
 
 authRouter.get(
     "/changepassword",
+    authController.isAuthenticatedUser,
     (req, res) => {
         res.render("changePassword", {});
     }
 );
 
-authRouter.post("/changepassword", authController.editUserPassword);
+authRouter.post("/changepassword", authController.isAuthenticatedUser, authController.editUserPassword);
+
+authRouter.get(
+    "/changename",
+    authController.isAuthenticatedUser,
+    (req, res) => {
+        res.render("changeName", {});
+    }
+);
+
+authRouter.post("/changename", authController.isAuthenticatedUser, authController.editUserName);
 
 // export the router
 module.exports = authRouter;

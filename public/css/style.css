@@ -104,7 +104,9 @@ body {
 
 /* nav bar in main page */
 .nav-top {
+    height: 5.5rem;
     align-items: center;
+    text-align: center;
     background: black;
 }
 .logo {
@@ -139,14 +141,14 @@ span {
     text-align: center;
 }
 .slide {
-    background: gray;
+    background: black;
     color: white;
     clear:both;
     width:100%;
     height:0px;
     overflow: hidden;
     text-align: center;
-    transition: height 1s ease;
+    transition: .3s;
 }
 .slide li {padding : 1.5rem;}
 .slide li a{
