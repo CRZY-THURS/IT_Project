@@ -36,15 +36,15 @@ const editUserPassword = async (req, res) => {
 };
 
 const editUserName = async (req, res) => {
-    User.findOne({ email: req.body.email })
+    User.findOne({ email: req.user.email })
         .then((user) => {
             if (user) {
-                (user.screen_name = req.body.screen_name),
+                (user.screen_name = req.body.name),
                 user
                     .save()
                     .then(() =>
                         res.send({
-                            message: "names changed successfully",
+                            message: "name changed successfully",
                         })
                     )
                     .catch((error) => {
