@@ -371,3 +371,19 @@ input.atp-input {
     text-align: center;
     padding-bottom: 2rem;
 }
+
+/* profile page */
+.profile-content {
+    background: rgba(74, 74, 74, 0.3);
+    height: 70%;
+    width: 40%;
+    margin: auto;
+    color: white;
+    padding: 5rem;
+    padding-top: 3rem;
+    font-size: 1.4rem;
+    line-height: 2;
+}
+.profile-content a {
+    color: white;
+}
