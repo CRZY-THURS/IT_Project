@@ -163,6 +163,11 @@ span {
 .slide:hover {
     height: auto;
 }
+.logout {
+    background: black;
+    color: #ffffff;
+    font-size: 1.4rem;
+}
 
 /* right hand side of main page: the playlist */
 .rhs {

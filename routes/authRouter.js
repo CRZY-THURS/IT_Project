@@ -31,6 +31,11 @@ authRouter.post(
     }
 );
 
+authRouter.post("/logout", (req, res) => {
+    req.logout(); // kill the session
+    res.redirect("/login");
+});
+
 authRouter.get(
     "/changepassword",
     authController.isAuthenticatedUser,
