@@ -17,9 +17,9 @@ userRouter.get(
 );
 
 userRouter.get(
-    "/library",
+    "/profile",
     authController.isAuthenticatedUser,
-    userController.viewAllMusics,
+    userController.getProfile,
 );
 
 // export the router

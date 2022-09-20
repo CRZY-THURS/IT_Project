@@ -36,7 +36,7 @@ const editUserPassword = async (req, res) => {
 };
 
 const editUserName = async (req, res) => {
-    User.findOne({ email: req.user.email })
+    User.findOne({ email: req.user._id })
         .then((user) => {
             if (user) {
                 (user.screen_name = req.body.name),

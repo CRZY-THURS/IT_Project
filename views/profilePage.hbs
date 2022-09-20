@@ -1,6 +1,4 @@
-<section class="change-name-section">
 <nav class="nav-top">
-
     <a href="/home"><img class="logo" src="/pictures/logo1.png"></a>
 
     <div class="dd-menu">
@@ -17,18 +15,13 @@
     </div>
 </nav>
 
-<form class="add-new" action="/changename" method="post">
-    <div class="info_block">
-        <label class="input_block" for="name">New screen name</br>
-        <input class="input_block"
-            id="name"
-            name="name"
-            type="text"
-            required
-        />
-    </div>
-    <div class="info_block">
-        <button class="btn-hover color-8" class="buttons" class="input_block" type="submit">Submit</button>
-    </div>
-</form>
-</section>
+{{#with data}}
+<div class="profile-content">
+<p>Screen name: {{this.screen_name}}</p>
+<p>Contact email: {{this.email}}</p>
+<p>Start date: {{showDate this.start_date}}</p>
+<a href="/changename">Edit screen name</a><br>
+<a href="/changepassword">Change password</a>
+</div>
+{{/with}}
+
