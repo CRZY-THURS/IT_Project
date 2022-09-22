@@ -50,5 +50,12 @@ entityRouter.get(
     entityController.getAllMusic,
 );
 
+entityRouter.post(
+    "/add-music-to-my-library/:_id",
+    authController.isAuthenticatedUser,
+    entityController.addFromAllMusic,
+);
+
+
 // export the router
 module.exports = entityRouter;
