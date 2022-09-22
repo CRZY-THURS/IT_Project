@@ -139,4 +139,5 @@ module.exports = {
     getMusicForAdding,
     addMusicToPlaylist,
     getAllMusic,
+    browseAllMusic, 
 };

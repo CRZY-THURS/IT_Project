@@ -50,5 +50,11 @@ entityRouter.get(
     entityController.getAllMusic,
 );
 
+entityRouter.get(
+    "/public-music-library",
+    authController.isAuthenticatedUser,
+    entityController.browseAllMusic,
+);
+
 // export the router
 module.exports = entityRouter;
