@@ -119,10 +119,27 @@ const getAllMusic = async (req, res) => {
     };
 };
 
+// an backend-api for adding one music from all music browsing page to own library
+const addFromAllMusic = async (req, res) => {
+    try {
+        const user = await User.findOne({ _id: req.user._id },{}).lean();
+
+        await Playlist.updateOne(
+            { _id: user.playlists[0] },
+            { $push: { "musics": req.musicId } }
+        );
+
+    } catch (err) {
+        console.error(err.message);
+        res.status(500);
+    };
+};
+
 module.exports = {
     addPlaylist,
     addMusic,
     getMusicForAdding,
     addMusicToPlaylist,
     getAllMusic,
+    addFromAllMusic,
 };
