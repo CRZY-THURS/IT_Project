@@ -31,5 +31,30 @@ authRouter.post(
     }
 );
 
+authRouter.post("/logout", (req, res) => {
+    req.logout(); // kill the session
+    res.redirect("/login");
+});
+
+authRouter.get(
+    "/changepassword",
+    authController.isAuthenticatedUser,
+    (req, res) => {
+        res.render("changePassword", {});
+    }
+);
+
+authRouter.post("/changepassword", authController.isAuthenticatedUser, authController.editUserPassword);
+
+authRouter.get(
+    "/changename",
+    authController.isAuthenticatedUser,
+    (req, res) => {
+        res.render("changeName", {});
+    }
+);
+
+authRouter.post("/changename", authController.isAuthenticatedUser, authController.editUserName);
+
 // export the router
 module.exports = authRouter;

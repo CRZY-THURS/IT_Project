@@ -1,4 +1,3 @@
-<section class="addmusic-section">
 <nav class="nav-top">
 
     <a href="/home"><img class="logo" src="/pictures/logo1.png"></a>
@@ -17,13 +16,13 @@
     </div>
 </nav>
 
-<form class="add-to-playlist" action="./{{playlist._id}}" method="post">
-    <p class="add-music-title">Select from the Library</p>
-    {{#each musics}}
-        <div class="atp"><label><input class="atp-input" name="musics[]" type="checkbox" value="{{this._id}}" />{{this.title}} </label></div>
-    {{/each}}
-    <div class="info_block">
-        <button class="btn-hover color-8" class="buttons" id="atp-btn" type="submit">Add to {{playlist.name}}</button>
-    </div>
-</form>
-</section>
+{{#with data}}
+<div class="profile-content">
+<p>Screen name: {{this.screen_name}}</p>
+<p>Contact email: {{this.email}}</p>
+<p>Start date: {{showDate this.start_date}}</p>
+<a href="/changename">Edit screen name</a><br>
+<a href="/changepassword">Change password</a>
+</div>
+{{/with}}
+

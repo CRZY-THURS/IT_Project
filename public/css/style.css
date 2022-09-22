@@ -102,20 +102,75 @@ body {
     box-shadow: 0 4px 15px 0 rgba(45, 54, 65, 0.75);
 }
 
-/* left nav bar in main page */
+/* nav bar in main page */
 .nav-top {
+    height: 5.5rem;
     align-items: center;
     text-align: center;
     background: black;
 }
 .logo {
     height: 5rem;
+    margin-left: 47%;
+    float: left;
+    overflow: hidden;
 }
 .nav-left {
     background: #0D0D0D;
     font-size: 1.5rem;
     height: 100%;
     width: 100%;
+}
+
+/*profile bars*/
+.profile {
+    height: 90%;
+    width: 90%;
+    background: black;
+}
+.profile:hover {
+    background: grey;
+}
+.logout {
+    height: 90%;
+    width: 90%;
+    background: black;
+}
+.logout:hover {
+    background: grey;
+}
+.dd-menu {
+    margin-left: 90%;
+    width : 9%;
+
+    position: absolute;
+    box-sizing: border-box;
+    height: 5rem;
+} 
+.slide {
+    background: black;
+    color: white;
+    clear:both;
+    width:100%;
+    height:auto;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .3s .3s, visibility .6s;
+}
+.slide li a{
+    text-decoration-line: none;
+}
+#touch {position: absolute; opacity: 0; height: 0px;}    
+#touch:hover + .slide {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity .3s;
+}
+.slide:hover {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity .3s;
 }
 
 /* right hand side of main page: the playlist */
@@ -210,7 +265,6 @@ body {
     margin-bottom: 1rem;
     padding: 0.2rem;
 }
-
 .add-to-playlist {
     color: #ffffff;
     background: rgba(74, 74, 74, 0.7);
@@ -220,6 +274,7 @@ body {
     margin-left: 25%;
     margin-right: 25%;
 }
+
 /* login and register page */
 .register {
     background: rgba(74, 74, 74, 0.3);
@@ -258,9 +313,35 @@ body {
     color: white;
     padding: 5rem;
 }
-
+.error-login {
+    color: red;
+}
 a:hover{
     color:darkorchid;
+}
+
+/* change password page */
+.change-password {
+    background: rgba(74, 74, 74, 0.3);
+    height: 60%;
+    width: 70%;
+    margin: auto;
+    color: white;
+    padding: 5rem;
+}
+.change-password-left {
+    grid-area: left;
+    float: left;
+    margin-right: 4rem;
+}
+.change-password-right {
+    grid-area: right;
+}
+.change-password-inputs {
+    margin-bottom: 3rem;
+    display: grid;
+    grid-template-areas: 
+        "left right";
 }
 
 /* add music to a playlist */
@@ -293,4 +374,20 @@ input.atp-input {
     color: #A6A6A6;
     text-align: center;
     padding-bottom: 2rem;
+}
+
+/* profile page */
+.profile-content {
+    background: rgba(74, 74, 74, 0.5);
+    height: 70%;
+    width: 40%;
+    margin: auto;
+    color: white;
+    padding: 5rem;
+    padding-top: 3rem;
+    font-size: 1.4rem;
+    line-height: 2;
+}
+.profile-content a {
+    color: white;
 }

@@ -47,8 +47,19 @@ const viewAllMusics = async (req, res) => {
     });
 };
 
+const getProfile = async (req, res) => {
+    const user = await User.findOne(
+        { _id: req.user._id },
+        {}
+    ).lean();
+    return res.render("profilePage", {
+        data: user,
+    });
+};
+
 module.exports = {
     homePage,
     viewAllMusics,
     myPlaylist,
+    getProfile,
 };

@@ -9,6 +9,16 @@ const hbs = exphbs.create({
         equals: function (a, b) {
             return (a == b);
         },
+
+        showDate: function (date) {
+            return (
+                date.getFullYear() +
+                "-" +
+                (date.getMonth() + 1) +
+                "-" +
+                date.getDate()
+            );
+        },
     },
 });
 
