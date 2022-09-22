@@ -30,7 +30,9 @@
     <ul class="playlists">
         <li>
             {{#each data.playlists}}
+            
             <a href="/home/{{this._id}}">
+                <img class="playlist-icon" src="/pictures/playlist_icon.png">
                 <button class="playlist">
                 {{this.name}}
                 </button>
@@ -41,7 +43,8 @@
 </div>
 
 <div class="rhs">
-    <p class="playlist-name">🎶{{playlist.name}}</p>
+    <img class="note" src="/pictures/note.png">
+    <p class="playlist-name">{{playlist.name}}</p>
     <a href="/addmusic/{{playlist._id}}">
         <button class="add-to-playlist-button">+ Add Music</button>
     </a>
