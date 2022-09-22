@@ -68,17 +68,29 @@ const addMusic = async (req, res) => {
 
 // an backend-api for getting addMusicToPlaylist page
 const getMusicForAdding = async (req, res) => {
-    const playlist = await Playlist.findOne(
-        { _id: req.params._id },
-        {}
-    ).lean();
+    try {
+        const playlist = await Playlist.findOne(
+            { _id: req.params._id },
+            {}
+        ).lean();
 
-    const allMusics = await Music.find({}).lean();
+        const musicAlreadyExist = await Playlist.findOne(
+            { _id: req.params._id },
+            {}
+        ).populate({ path: "musics" }).lean();
 
-    return res.render("addMusicToPlaylist", {
-        musics: allMusics,
-        playlist: playlist,
-    });
+        const idsAllreadyExist = musicAlreadyExist.musics.map(music => music._id);
+
+        const allMusics = await Music.find({"_id": { "$nin": idsAllreadyExist }}).lean();
+
+        return res.render("addMusicToPlaylist", {
+            musics: allMusics,
+            playlist: playlist,
+        });
+    } catch (err) {
+        console.error(err.message);
+        res.status(500);
+    };
 };
 
 // an backend-api for adding music to playlist
@@ -98,7 +110,7 @@ const addMusicToPlaylist = async (req, res) => {
     } catch (err) {
             console.error(err.message);
             res.status(500);
-        };
+    };
 };
 
 // an backend-api for getting all musics in default playlist
