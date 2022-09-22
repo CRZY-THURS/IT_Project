@@ -121,25 +121,32 @@ body {
     height: 100%;
     width: 100%;
 }
+
+/*profile bars*/
+.profile {
+    height: 90%;
+    width: 90%;
+    background: black;
+}
+.profile:hover {
+    background: grey;
+}
+.logout {
+    height: 90%;
+    width: 90%;
+    background: black;
+}
+.logout:hover {
+    background: grey;
+}
 .dd-menu {
     margin-left: 90%;
     width : 9%;
-    background: black;
+
     position: absolute;
     box-sizing: border-box;
     height: 5rem;
 } 
-span {
-    padding : 30px;
-    box-sizing: border-box;
-    height: 5rem;
-    background : #000000; 
-    color : white;
-    font-size : 1.4em;
-    cursor : pointer;
-    display: block;
-    text-align: center;
-}
 .slide {
     background: black;
     color: white;
@@ -147,16 +154,12 @@ span {
     width:100%;
     height:auto;
     overflow: hidden;
-    text-align: center;
     opacity: 0;
     visibility: hidden;
     transition: opacity .3s .3s, visibility .6s;
 }
-.slide li {padding : 1.5rem;}
 .slide li a{
-    color: #ffffff;
     text-decoration-line: none;
-    font-size: 1.4rem;
 }
 #touch {position: absolute; opacity: 0; height: 0px;}    
 #touch:hover + .slide {
@@ -168,11 +171,6 @@ span {
     opacity: 1;
     visibility: visible;
     transition: opacity .3s;
-}
-.logout {
-    background: black;
-    color: #ffffff;
-    font-size: 1.4rem;
 }
 
 /* right hand side of main page: the playlist */
