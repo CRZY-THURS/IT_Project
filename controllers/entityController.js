@@ -119,6 +119,20 @@ const getAllMusic = async (req, res) => {
     };
 };
 
+// an backend-api for getting all musics in database
+const browseAllMusic = async (req, res) => {
+    try {
+        var date = new Date();
+
+        const musics = await Music.find().lean();
+        res.send(musics);
+
+    } catch (err) {
+        console.error(err.message);
+        res.status(500);
+    };
+};
+
 module.exports = {
     addPlaylist,
     addMusic,
