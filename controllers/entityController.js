@@ -137,7 +137,9 @@ const browseAllMusic = async (req, res) => {
         var date = new Date();
 
         const musics = await Music.find().lean();
-        res.send(musics);
+        return res.render("addMusicToPlaylist", {
+            musics: musics,
+        });
     } catch (err) {
         console.error(err.message);
         res.status(500);

@@ -39,6 +39,27 @@ const myPlaylist = async (req, res) => {
     });
 };
 
+// whole library
+const library = async (req, res) => {
+    const user = await User.findOne(
+        { _id: req.user._id },
+        {}
+    ).populate({ path: "playlists" }).lean();
+
+    const playlist = await Playlist.findOne(
+        { _id: req.params._id },
+        {}
+    ).populate({ path: "musics" }).lean();
+
+    const musics = await Music.find().lean();
+    console.log(musics);
+    return res.render("library", {
+        data: user,
+        playlist: playlist,
+        musics: musics,
+    });
+};
+
 // an backend-api for getting all music in the library
 const viewAllMusics = async (req, res) => {
     const allMusics = await Music.find({}).lean();
@@ -62,4 +83,5 @@ module.exports = {
     viewAllMusics,
     myPlaylist,
     getProfile,
+    library
 };

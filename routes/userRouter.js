@@ -21,6 +21,11 @@ userRouter.get(
     authController.isAuthenticatedUser,
     userController.getProfile,
 );
+userRouter.get(
+    "/library",
+    authController.isAuthenticatedUser,
+    userController.library,
+);
 
 // export the router
 module.exports = userRouter;
