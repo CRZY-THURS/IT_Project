@@ -62,6 +62,12 @@ entityRouter.post(
     entityController.addFromAllMusic,
 );
 
+entityRouter.post(
+    "/deleteplaylist/:_id",
+    authController.isAuthenticatedUser,
+    entityController.deletePlaylist,
+);
+
 
 // export the router
 module.exports = entityRouter;

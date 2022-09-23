@@ -24,7 +24,7 @@ const addPlaylist = async (req, res) => {
         playlist.save().then(
             setTimeout(function () {
                 res.redirect("/home");
-            }, 1000)
+            }, 500)
         );
 
     } catch (err) {
@@ -57,7 +57,7 @@ const addMusic = async (req, res) => {
         music.save().then(
             setTimeout(function () {
                 res.redirect("/home");
-            }, 1000)
+            }, 500)
         );
 
     } catch (err) {
@@ -145,8 +145,8 @@ const browseAllMusic = async (req, res) => {
         res.status(500);
     };
 };
-// an backend-api for adding one music from all music browsing page to own library
 
+// an backend-api for adding one music from all music browsing page to own library
 const addFromAllMusic = async (req, res) => {
     try {
         const user = await User.findOne({ _id: req.user._id },{}).lean();
@@ -162,6 +162,25 @@ const addFromAllMusic = async (req, res) => {
     };
 };
 
+// an backend-api for deleting playlists
+const deletePlaylist = async (req, res) => {
+    try {
+
+        await User.updateOne(
+            { _id: req.user._id },
+            { $pull: { "playlists": req.params._id } }
+        ).then(
+            setTimeout(function () {
+                res.redirect("/home");
+            }, 500)
+        );
+
+    } catch (err) {
+            console.error(err.message);
+            res.status(500);
+    };
+};
+
 module.exports = {
     addPlaylist,
     addMusic,
@@ -170,4 +189,5 @@ module.exports = {
     getAllMusic,
     browseAllMusic, 
     addFromAllMusic,
+    deletePlaylist,
 };

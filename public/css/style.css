@@ -225,6 +225,12 @@ body {
     margin-top: 1.5rem;
     font-size: 1.5rem;
 }
+.playlist-table tr:nth-child(even):hover {
+    background-color: rgba(74, 74, 74, 0.6);
+}
+.playlist-table tr:nth-child(odd):hover {
+    background-color: rgba(89, 88, 86, 0.8);
+}
 /* headers */
 .heading {
     text-align: left;
@@ -232,7 +238,7 @@ body {
     background-color: #262626;
     color: white;
 }
-.entity:nth-child(odd){background-color: #595856;}
+.entity:nth-child(odd){background-color: rgba(89, 88, 86, 0.7);}
 .title {
     padding: 0.5rem;
     color: white;
@@ -375,9 +381,6 @@ input.atp-input {
     color: #A6A6A6;
     text-align: center;
     padding-bottom: 2rem;
-}
-td:hover{
-    color:darkorchid;
 }
 
 /* profile page */
