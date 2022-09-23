@@ -8,14 +8,14 @@
     <input type="checkbox" id="touch"> 
     <ul class="slide">
         <li><button class="profile"><a href="/profile" style='font-size:1.2rem;color:white'>Profile</a></button></li> 
-        <li><form class="sign-out" action="/logout" method="post">
-            <button class="logout" type="submit" style='font-size:1.2rem;color:white'>
-                Log out
-            </button>
-        </form></li>
+        <li><button class="profile"><a href="javascript:a_post();" style='font-size:1.2rem;color:white'>Sign out</a></button></li>
     </ul>
     </div>
 </nav>
+
+<div style="display:'none'" > 
+	<form id="a_post" action="/logout" method="post"></form>
+</div>
 
 <div class="nav-left">
     <p>Add New</p>
