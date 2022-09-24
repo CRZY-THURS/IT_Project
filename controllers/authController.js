@@ -13,21 +13,23 @@ const editUserPassword = async (req, res) => {
                 
                     user.save()
                     .then(() =>
-                        res.send({
-                            message: "password changed successfully",
-                        })
+                        res.send(
+                            '<script>alert("password changed"); window.location.href = "/login"; </script>'
+                        )
                     )
                     .catch((error) => {
                         res.json(error);
                     });
                 } else {
-                    res.send({
-                        message: "incorrect security answer",
-                    })
+                    return res.send(
+                        '<script>alert("incorrect security answer"); window.location.href = "/changepassword"; </script>'
+                    );
                 }
                 
             } else if (!user) {
-                res.send({ message: "no such user" });
+                return res.send(
+                    '<script>alert("no such user"); window.location.href = "/home"; </script>'
+                );
             }
         })
         .catch((error) => {
@@ -43,15 +45,15 @@ const editUserName = async (req, res) => {
                 user
                     .save()
                     .then(() =>
-                        res.send({
-                            message: "name changed successfully",
-                        })
+                        res.send(
+                            '<script>alert("Name changed"); window.location.href = "/home"; </script>'
+                        )
                     )
                     .catch((error) => {
                         res.json(error);
                     });
             } else if (!user) {
-                res.send({ message: "no such user" });
+                res.send({ message: "unknown error" });
             }
         })
         .catch((error) => {
@@ -67,7 +69,7 @@ const signupUser = async (req, res) => {
         if (user) {
             return res
                 .status(400)
-                .json({ message: "User already exists" });
+                .send('<script>alert("user already exists"); window.location.href = "/signup"; </script>');
         }
 
         const default_playlist = new Playlist({

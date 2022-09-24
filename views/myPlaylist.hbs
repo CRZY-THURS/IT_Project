@@ -74,6 +74,12 @@
                 <td class="title">{{this.artist}}</td>
                 <td class="title">{{this.album}}</td>
                 <td class="title">{{this.genre}}</td>
+                <td>
+                    <form action="/remove/{{../playlist._id}}" method="post">
+                        <input type="text" name="music_id" value="{{this._id}}" style="display: none;">
+                        <button type="submit" class="btn-delete"><img class="delete-icon" src="/pictures/icons-delete.png"></button>
+                    </form>
+                </td>
 	        </tr>
             {{/each}}
     </table>
@@ -81,7 +87,7 @@
 </section>
 
 <script>
-    function a_post2(){
-	document.getElementById("a_post2").submit();
+    function a_post2() {
+	    document.getElementById("a_post2").submit();
     }
 </script>

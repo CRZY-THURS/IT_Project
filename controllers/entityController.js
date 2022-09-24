@@ -166,20 +166,54 @@ const addFromAllMusic = async (req, res) => {
 const deletePlaylist = async (req, res) => {
     try {
 
-        await User.updateOne(
-            { _id: req.user._id },
-            { $pull: { "playlists": req.params._id } }
-        ).then(
-            setTimeout(function () {
-                res.redirect("/home");
-            }, 500)
-        );
+        const user = await User.findOne({ _id: req.user._id },{}).lean();
+        const playlist = await Playlist.findOne(
+            { _id: req.params._id },
+            {}
+        ).lean();
+        const playlists = user.playlists.map(id => id.toString())
+
+        if (playlists.includes(playlist._id.toString())) {
+            if (playlist.is_default) {
+                res.send({ message: "Cannot delete default playlist" });
+            } else {
+                await User.updateOne(
+                    { _id: req.user._id },
+                    { $pull: { "playlists": req.params._id } }
+                ).then(
+                    setTimeout(function () {
+                        res.redirect("/home");
+                    }, 500)
+                );
+            }
+        } else {
+            res.send({ message: "Permission denied" });
+        }
 
     } catch (err) {
             console.error(err.message);
             res.status(500);
     };
 };
+
+// an backend-api for removing music from playlist
+const deleteMusic = async (req, res) => {
+    try {
+
+        await Playlist.updateOne(
+            { _id: req.params._id },
+            { $pull: { "musics": req.body.music_id } }
+        ).then(
+            setTimeout(function () {
+                res.redirect("/home/" + req.params._id);
+            }, 500)
+        );
+    } catch (err) {
+        console.error(err.message);
+        res.status(500);
+    };
+};
+
 
 module.exports = {
     addPlaylist,
@@ -190,4 +224,5 @@ module.exports = {
     browseAllMusic, 
     addFromAllMusic,
     deletePlaylist,
+    deleteMusic,
 };
