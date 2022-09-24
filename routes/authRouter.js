@@ -38,13 +38,12 @@ authRouter.post("/logout", (req, res) => {
 
 authRouter.get(
     "/changepassword",
-    authController.isAuthenticatedUser,
     (req, res) => {
         res.render("changePassword", {});
     }
 );
 
-authRouter.post("/changepassword", authController.isAuthenticatedUser, authController.editUserPassword);
+authRouter.post("/changepassword", authController.editUserPassword);
 
 authRouter.get(
     "/changename",

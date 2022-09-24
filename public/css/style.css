@@ -231,6 +231,10 @@ body {
 .playlist-table tr:nth-child(odd):hover {
     background-color: rgba(89, 88, 86, 0.8);
 }
+.playlist-table tr:hover .delete-icon {
+    visibility: visible;
+}
+
 /* headers */
 .heading {
     text-align: left;
@@ -238,7 +242,12 @@ body {
     background-color: #262626;
     color: white;
 }
-.entity:nth-child(odd){background-color: rgba(89, 88, 86, 0.7);}
+.entity:nth-child(odd) .title{background-color: rgba(89, 88, 86, 0.7);}
+.btn-delete {background-color: rgba(89, 88, 86, 0);}
+.delete-icon {
+    visibility: hidden;
+    height: 1.6rem;
+}
 .title {
     padding: 0.5rem;
     color: white;
