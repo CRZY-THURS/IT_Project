@@ -10,6 +10,12 @@ const homePage = async (req, res) => {
         {}
     ).populate({ path: "playlists" }).lean();
 
+    const defau = await [user.playlists[0]];
+    // console.log(defau);
+
+    const plays = await user.playlists.slice(1);
+    // console.log(plays);
+
     const playlist = await Playlist.findOne(
         { _id: user.playlists[0]._id },
         {}
@@ -18,6 +24,8 @@ const homePage = async (req, res) => {
     return res.render("myPlaylist", {
         playlist: playlist,
         data: user,
+        defau: defau,
+        plays: plays,
     });
 };
 
@@ -28,14 +36,22 @@ const myPlaylist = async (req, res) => {
         {}
     ).populate({ path: "playlists" }).lean();
 
+    const defau = await [user.playlists[0]];
+    // console.log(defau);
+
+    const plays = await user.playlists.slice(1);
+    // console.log(plays);
+
     const playlist = await Playlist.findOne(
         { _id: req.params._id },
         {}
     ).populate({ path: "musics" }).lean();
 
     return res.render("myPlaylist", {
-        data: user,
         playlist: playlist,
+        data: user,
+        defau: defau,
+        plays: plays,
     });
 };
 
@@ -45,6 +61,12 @@ const library = async (req, res) => {
         { _id: req.user._id },
         {}
     ).populate({ path: "playlists" }).lean();
+
+    const defau = await [user.playlists[0]];
+    // console.log(defau);
+
+    const plays = await user.playlists.slice(1);
+    // console.log(plays);
 
     const playlist = await Playlist.findOne(
         { _id: req.params._id },
@@ -56,6 +78,8 @@ const library = async (req, res) => {
         data: user,
         playlist: playlist,
         musics: musics,
+        defau: defau,
+        plays: plays,
     });
 };
 

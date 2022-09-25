@@ -26,13 +26,30 @@
         <button class="nav-button">+ Add New Music</button>
     </a>
 
+    <p>Library</p>
+    <ul class="playlists">
+        <li>
+            {{#each defau}}
+            
+            <a href="/home/{{this._id}}">
+                <button class="playlist">
+                My Musics
+                </button>
+            </a>
+            {{/each}}
+        </li>
+
+        <li>
+            <a href="/library"><button class="playlist">Browse</button></a>
+        </li>
+    </ul>
+
     <p>Playlists</p>
     <ul class="playlists">
         <li>
-            {{#each data.playlists}}
+            {{#each plays}}
             
             <a href="/home/{{this._id}}">
-                <img class="playlist-icon" src="/pictures/playlist_icon.png">
                 <button class="playlist">
                 {{this.name}}
                 </button>
@@ -40,9 +57,6 @@
             {{/each}}
         </li>
     </ul>
-    <a href="/library">
-        <button class="playlist">library</button>
-    </a>
 </div>
 
 <div class="rhs">
