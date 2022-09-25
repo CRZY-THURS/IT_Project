@@ -34,6 +34,13 @@ describe('Invalid test', () => {
             expect(err).toBeInstanceOf(mongoose.Error.ValidationError);
         });
     });
+    it('No Pquestion', async () => {
+        const user = new User(invalidUser);
+        await user.validate().catch(err => {
+            expect(err).toBeInstanceOf(mongoose.Error.ValidationError);
+        });
+    }
+    );
 });
 
 describe('Valid test', () => {
@@ -70,6 +77,20 @@ describe('Valid test', () => {
             is_default: false,
         });
         await playlist.validate().catch(err => {
+            expect(err).toBeInstanceOf(mongoose.Error.ValidationError);
+        });
+    });
+    it('Have Pquestion', async () => {
+        const user = new User({
+            email: "pat@gmail.com",
+            password: "12345678",
+            screen_name: "pat",
+            profile_picture: 1,
+            gender: "M",
+            start_date: new Date(),
+            pquestion: "test",
+        });
+        await user.validate().catch(err => {
             expect(err).toBeInstanceOf(mongoose.Error.ValidationError);
         });
     });
