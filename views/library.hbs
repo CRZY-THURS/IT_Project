@@ -51,7 +51,7 @@
                 <td >{{artist}}</td>
                 <td >{{album}}</td>
                 <td >{{genre}}</td>
-                <td ><button>ADD</button></td>
+                <td ><form action="/add-music-to-my-library/{{_id}}" method="post"><button>ADD</button type="submit"></form></td>
 	        </tr>
             {{/each}}
     </table>
