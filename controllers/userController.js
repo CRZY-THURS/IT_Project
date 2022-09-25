@@ -52,7 +52,6 @@ const library = async (req, res) => {
     ).populate({ path: "musics" }).lean();
 
     const musics = await Music.find().lean();
-    console.log(musics);
     return res.render("library", {
         data: user,
         playlist: playlist,

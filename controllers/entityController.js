@@ -153,8 +153,10 @@ const addFromAllMusic = async (req, res) => {
 
         await Playlist.updateOne(
             { _id: user.playlists[0] },
-            { $push: { "musics": req.params._musicId } }
+            { $addToSet: { "musics": req.params._musicId } }
         );
+
+        res.redirect("/library");
 
     } catch (err) {
         console.error(err.message);
