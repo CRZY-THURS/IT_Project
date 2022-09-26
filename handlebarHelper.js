@@ -19,6 +19,13 @@ const hbs = exphbs.create({
                 date.getDate()
             );
         },
+
+        ifExist: function (exist, options) {
+            if (exist == 1) {
+                return options.fn(this);
+            }
+            return options.inverse(this);
+        },
     },
 });
 

@@ -74,10 +74,30 @@ const library = async (req, res) => {
     ).populate({ path: "musics" }).lean();
 
     const musics = await Music.find().lean();
+    const array = [];
+    // console.log(defau[0].musics);
+    for (m of musics) {
+        //console.log(defau[0].musics[0].equals(m._id));
+        var check = 0;
+        for (ele of defau[0].musics) {
+            console.log(ele);
+            console.log(m._id);
+            if (ele.equals(m._id)) {
+                check = 1;
+            }
+        }
+        if (check == 1) {
+            array.push({m, exist:1});
+        }
+        else if (check == 0) {
+            array.push({m, exist:0});
+        }
+    }
+    console.log(array);
     return res.render("library", {
         data: user,
         playlist: playlist,
-        musics: musics,
+        musics: array,
         defau: defau,
         plays: plays,
     });
