@@ -14,7 +14,6 @@
     font-family: "Poppins", sans-serif;
 }
 
-
 /* CSS for main core which can support responsive */
 header{
     top: 0;
@@ -244,7 +243,10 @@ body {
     color: white;
 }
 .entity:nth-child(odd) .title{background-color: rgba(89, 88, 86, 0.7);}
-.btn-delete {background-color: rgba(89, 88, 86, 0);}
+.btn-delete {
+    background-color: rgba(89, 88, 86, 0);
+    text-align: center;
+}
 .delete-icon {
     visibility: hidden;
     height: 1.6rem;
