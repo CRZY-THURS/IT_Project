@@ -60,14 +60,23 @@
 </div>
 
 <div class="rhs">
-    <table >
+    <img class="note" src="/pictures/note.png">
+    <p class="playlist-name">browse all</p>
+    <table class="playlist-table" style="width:auto">
+            <tr class="heading">
+		        <th class="title" style="width:20%">title</th>
+		        <th class="title" style="width:20%">artist</th>
+		        <th class="title" style="width:20%">album</th>
+                <th class="title" style="width:20%">genre</th>
+                <th class="title">Add to mine</th>
+	        </tr>
             {{#each musics}}
-	        <tr  >
-		        <td >{{title}}</td>
-                <td >{{artist}}</td>
-                <td >{{album}}</td>
-                <td >{{genre}}</td>
-                <td ><form action="/add-music-to-my-library/{{_id}}" method="post"><button>ADD</button type="submit"></form></td>
+	        <tr class="entity" style="padding:0%;">
+		        <td class="title" >{{title}}</td>
+                <td class="title" >{{artist}}</td>
+                <td class="title" >{{album}}</td>
+                <td class="title" >{{genre}}</td>
+                <td ><form action="/add-music-to-my-library/{{_id}}" method="post"><button class="btn-hover color-8">ADD</button type="submit"></form></td>
 	        </tr>
             {{/each}}
     </table>
