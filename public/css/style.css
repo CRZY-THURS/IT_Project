@@ -285,9 +285,9 @@ body {
 .add-to-playlist {
     color: #ffffff;
     background: rgba(74, 74, 74, 0.7);
-    min-height: 60%;
+    height: 70%;
     padding: 3rem;
-    font-size: 1.1rem;
+    font-size: 1rem;
     margin-left: 25%;
     margin-right: 25%;
 }
