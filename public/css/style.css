@@ -295,6 +295,12 @@ body {
     margin-left: 25%;
     margin-right: 25%;
 }
+.atm-btn {
+    width: 8rem;
+    height: 2rem;
+    border-radius: 5%;
+    margin-left: 20%;
+}
 
 /* login and register page */
 .register {

@@ -68,7 +68,7 @@
 		        <th class="title" style="width:20%">Artist</th>
 		        <th class="title" style="width:20%">Album</th>
                 <th class="title" style="width:20%">Genre</th>
-                <th class="title">Add to mine</th>
+                <th class="title">Add to my music</th>
 	        </tr>
             {{#each musics}}
 	        <tr class="entity" style="padding:0%;">
@@ -79,7 +79,7 @@
                 {{#ifExist exist}}
                 <td class="title" style="text-align: center;">Existed</td>
                 {{else}}
-                <td ><form action="/add-music-to-my-library/{{m._id}}" method="post"><button class="btn-hover color-8">ADD</button type="submit"></form></td>
+                <td ><form action="/add-music-to-my-library/{{m._id}}" method="post"><button class="atm-btn btn-hover color-8">ADD</button type="submit"></form></td>
                 {{/ifExist}}
 
 	        </tr>

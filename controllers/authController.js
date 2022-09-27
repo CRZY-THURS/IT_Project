@@ -28,7 +28,7 @@ const editUserPassword = async (req, res) => {
                 
             } else if (!user) {
                 return res.send(
-                    '<script>alert("no such user"); window.location.href = "/home"; </script>'
+                    '<script>alert("no such user"); window.location.href = "/changepassword"; </script>'
                 );
             }
         })
@@ -94,7 +94,7 @@ const signupUser = async (req, res) => {
 
         default_playlist.save();
         user.save();
-        return res.redirect("/login");
+        return res.send('<script>alert("sign up complete"); window.location.href = "/login"; </script>');
 
     } catch (err) {
         console.error(err.message);
