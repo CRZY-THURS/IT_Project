@@ -79,13 +79,12 @@ body {
     text-align:center;
     border: none;
     background-size: 300% 100%;
-
     border-radius: 50px;
     moz-transition: all .4s ease-in-out;
     -o-transition: all .4s ease-in-out;
     -webkit-transition: all .4s ease-in-out;
     transition: all .4s ease-in-out;
-}
+} 
 .btn-hover:hover {
     background-position: 100% 0;
     moz-transition: all .4s ease-in-out;
@@ -224,6 +223,9 @@ body {
     margin-right: auto;
     margin-top: 1.5rem;
     font-size: 1.5rem;
+}
+.playlist-table th{
+    background-color: #262626;
 }
 .playlist-table tr:nth-child(even):hover {
     background-color: rgba(74, 74, 74, 0.6);
@@ -369,7 +371,6 @@ input.atp-input {
     height: 1.1rem;
     width: 1.1rem;
 }
-
 .atp {
     padding-left: 20%;
     font-size: 1.4rem;
@@ -403,8 +404,8 @@ input.atp-input {
     margin: auto;
     color: white;
     padding: 5rem;
-    padding-top: 3rem;
-    font-size: 1.4rem;
+    padding-top: 7rem;
+    font-size: 1.6rem;
     line-height: 2;
 }
 .profile-content a {
@@ -418,7 +419,6 @@ input.atp-input {
     overflow: hidden;
     margin-inline-end: 0.3rem;
 }
-
 .note{
     height: 2rem;
     float: left;
@@ -426,4 +426,29 @@ input.atp-input {
     margin-left: 10%;
     overflow: hidden;
     margin-inline-end: 1rem;
+}
+
+.profile-page-button{
+    margin-top: 6rem;
+}
+
+.profile-button {
+    font-size: 1.4rem;
+    text-align: center;
+    color: white;
+}
+.profile-button:hover {
+    color:darkorchid;
+}
+
+/* change screen name page*/
+.change-name{
+    background: rgba(74, 74, 74, 0.5);
+    height: 70%;
+    width: 40%;
+    margin: auto;
+    padding: 5rem;
+    padding-top: 7rem;
+    line-height: 2;
+    color: white;
 }
