@@ -144,7 +144,7 @@ body {
     position: absolute;
     box-sizing: border-box;
     height: 5rem;
-} 
+}
 .slide {
     background: black;
     color: white;
@@ -235,6 +235,9 @@ body {
 }
 .playlist-table tr:hover .delete-icon {
     visibility: visible;
+}
+.fa-trash-can {
+    color: white;
 }
 
 /* headers */
