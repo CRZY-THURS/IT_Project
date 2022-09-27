@@ -21,8 +21,10 @@
 <p>Screen name: {{this.screen_name}}</p>
 <p>Contact email: {{this.email}}</p>
 <p>Start date: {{showDate this.start_date}}</p>
-<a href="/changename">Edit screen name</a><br>
-<a href="/changepassword">Change password</a>
+    <div class="profile-page-button">
+        <a href="/changename" class="profile-button">Edit screen name</a><br>
+        <a href="/changepassword" class="profile-button">Change password</a>
+    </div>
 </div>
 {{/with}}
 
