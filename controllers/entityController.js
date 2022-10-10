@@ -6,13 +6,18 @@ const Music = require("../models/musicModel");
 // an backend-api for adding playlist
 const addPlaylist = async (req, res) => {
     var date = new Date();
+    var visibility = true;
     try {
 
+        if (req.body.visibility) {
+            visibility = false
+        }
         const playlist = new Playlist({
             name: req.body.name,
             description: req.body.description,
             create_date: date,
             is_default: false,
+            is_public: visibility,
             musics: [],
         });
 
