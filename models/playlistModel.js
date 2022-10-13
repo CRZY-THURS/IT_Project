@@ -15,6 +15,7 @@ const schema = new mongoose.Schema({
 
     is_public: {
         type: Boolean,
+        default: true,
         required: true,
     },
 

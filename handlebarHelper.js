@@ -26,6 +26,10 @@ const hbs = exphbs.create({
             }
             return options.inverse(this);
         },
+
+        showLength: function (a) {
+            return a.length;
+        },
     },
 });
 

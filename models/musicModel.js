@@ -32,13 +32,6 @@ const schema = new mongoose.Schema({
         type: String,
         required: false,
     },
-
-    liked: [
-        {
-            type: mongoose.Schema.ObjectId,
-            ref: "user",
-        },
-    ],
     
 });
 

@@ -10,7 +10,7 @@ const addPlaylist = async (req, res) => {
     try {
 
         if (req.body.visibility) {
-            visibility = false
+            visibility = false;
         }
         const playlist = new Playlist({
             name: req.body.name,
