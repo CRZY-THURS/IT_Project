@@ -63,6 +63,12 @@ entityRouter.post(
 );
 
 entityRouter.post(
+    "/add-playlist-from-library/:_id",
+    authController.isAuthenticatedUser,
+    entityController.addFromAllPlaylist,
+);
+
+entityRouter.post(
     "/deleteplaylist/:_id",
     authController.isAuthenticatedUser,
     entityController.deletePlaylist,
