@@ -169,6 +169,23 @@ const addFromAllMusic = async (req, res) => {
     };
 };
 
+// an backend-api for adding one playlist from library
+const addFromAllPlaylist = async (req, res) => {
+    try {
+
+        await User.updateOne(
+            { _id: req.user._id },
+            { $push: { "playlists": req.params._id } }
+        );
+
+        res.redirect("/playlist-library");
+
+    } catch (err) {
+        console.error(err.message);
+        res.status(500);
+    };
+};
+
 // an backend-api for deleting playlists
 const deletePlaylist = async (req, res) => {
     try {
@@ -230,6 +247,7 @@ module.exports = {
     getAllMusic,
     browseAllMusic, 
     addFromAllMusic,
+    addFromAllPlaylist,
     deletePlaylist,
     deleteMusic,
 };
