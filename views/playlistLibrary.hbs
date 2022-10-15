@@ -64,48 +64,30 @@
 
 <div class="rhs">
     <img class="note" src="/pictures/note.png">
-    <p class="playlist-name">{{playlist.name}}</p>
-    <a href="/addmusic/{{playlist._id}}">
-        <button class="add-to-playlist-button">+ Add Music</button>
-    </a>
-    {{#if playlist.is_default}}{{else}}
-    <a href="javascript:a_post2();">
-        <button class="add-to-playlist-button">Delete playlist</button>
-    </a>
-    {{/if}}
-    <div style="display:'none'" > 
-	<form id="a_post2" action="/deleteplaylist/{{playlist._id}}" method="post"></form>
-    </div>
-    <table class="playlist-table">
-        {{!-- colspan="4" --}}
+    <p class="playlist-name">Browse All</p>
+    <table class="playlist-table" style="width:auto">
             <tr class="heading">
-		        <th class="title">Title</th>
-		        <th class="title">Artist</th>
-		        <th class="title">Album</th>
-                <th class="title">Genre</th>
+		        <th class="title" style="width:20%">Name</th>
+		        <th class="title" style="width:20%">Description</th>
+		        <th class="title" style="width:20%">Create date</th>
+                <th class="title" style="width:20%">Music</th>
+                <th class="title">Add to my music</th>
 	        </tr>
+            {{#each playlists}}
+	        <tr class="entity" style="padding:0%;">
+		        <td class="title" >{{p.name}}</td>
+                <td class="title" >{{p.description}}</td>
+                <td class="title" >{{showDate p.create_date}}</td>
+                <td class="title" >{{showLength p.musics}}</td>
+                {{#ifExist exist}}
+                <td class="title" style="text-align: center;">Existed</td>
+                {{else}}
+                <td ><form action="#" method="post"><button class="atm-btn btn-hover color-8">ADD</button type="submit"></form></td>
+                {{/ifExist}}
 
-            {{#each playlist.musics}}
-	        <tr class="entity" >
-		        <td class="title">{{this.title}}</td>
-                <td class="title">{{this.artist}}</td>
-                <td class="title">{{this.album}}</td>
-                <td class="title">{{this.genre}}</td>
-                <td>
-                    <form action="/remove/{{../playlist._id}}" method="post" style="height:100%; width: 100%">
-                        <input type="text" name="music_id" value="{{this._id}}" style="display: none;">
-                        <button type="submit" class="btn-delete" style="height:100%; width: 100%"><span class="delete-icon"><i class="fa-regular fa-trash-can"></i></span></button>
-                    </form>
-                </td>
 	        </tr>
             {{/each}}
     </table>
     <br>
 </div>
 </section>
-
-<script>
-    function a_post2() {
-	    document.getElementById("a_post2").submit();
-    }
-</script>

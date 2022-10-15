@@ -55,7 +55,7 @@ const myPlaylist = async (req, res) => {
     });
 };
 
-// whole library
+// library for music
 const library = async (req, res) => {
     const user = await User.findOne(
         { _id: req.user._id },
@@ -103,6 +103,49 @@ const library = async (req, res) => {
     });
 };
 
+// library for public playlists
+const libraryForPlaylist = async (req, res) => {
+    const user = await User.findOne(
+        { _id: req.user._id },
+        {}
+    ).populate({ path: "playlists" }).lean();
+
+    const defau = await [user.playlists[0]];
+    // console.log(defau);
+
+    const plays = await user.playlists.slice(1);
+    // console.log(plays);
+
+    const playlists = await Playlist.find(
+        { is_default: false, is_public: true },
+        {}
+    ).lean();
+    const array = [];
+    // console.log(defau[0].musics);
+    for (p of playlists) {
+        //console.log(defau[0].musics[0].equals(m._id));
+        var check = 0;
+        for (ele of user.playlists) {
+            if (ele._id.equals(p._id)) {
+                check = 1;
+            }
+        }
+        if (check == 1) {
+            array.push({p, exist:1});
+        }
+        else if (check == 0) {
+            array.push({p, exist:0});
+        }
+    }
+    console.log(array);
+    return res.render("playlistLibrary", {
+        data: user,
+        playlists: array,
+        defau: defau,
+        plays: plays,
+    });
+};
+
 // an backend-api for getting all music in the library
 const viewAllMusics = async (req, res) => {
     const allMusics = await Music.find({}).lean();
@@ -126,5 +169,6 @@ module.exports = {
     viewAllMusics,
     myPlaylist,
     getProfile,
-    library
+    library,
+    libraryForPlaylist,
 };

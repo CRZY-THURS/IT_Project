@@ -13,6 +13,12 @@ const schema = new mongoose.Schema({
         required: false,
     },
 
+    is_public: {
+        type: Boolean,
+        default: true,
+        required: true,
+    },
+
     create_date: {
         type: Date,
         required: true,
