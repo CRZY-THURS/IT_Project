@@ -6,13 +6,18 @@ const Music = require("../models/musicModel");
 // an backend-api for adding playlist
 const addPlaylist = async (req, res) => {
     var date = new Date();
+    var visibility = true;
     try {
 
+        if (req.body.visibility) {
+            visibility = false;
+        }
         const playlist = new Playlist({
             name: req.body.name,
             description: req.body.description,
             create_date: date,
             is_default: false,
+            is_public: visibility,
             musics: [],
         });
 
@@ -164,6 +169,23 @@ const addFromAllMusic = async (req, res) => {
     };
 };
 
+// an backend-api for adding one playlist from library
+const addFromAllPlaylist = async (req, res) => {
+    try {
+
+        await User.updateOne(
+            { _id: req.user._id },
+            { $push: { "playlists": req.params._id } }
+        );
+
+        res.redirect("/playlist-library");
+
+    } catch (err) {
+        console.error(err.message);
+        res.status(500);
+    };
+};
+
 // an backend-api for deleting playlists
 const deletePlaylist = async (req, res) => {
     try {
@@ -225,6 +247,7 @@ module.exports = {
     getAllMusic,
     browseAllMusic, 
     addFromAllMusic,
+    addFromAllPlaylist,
     deletePlaylist,
     deleteMusic,
 };

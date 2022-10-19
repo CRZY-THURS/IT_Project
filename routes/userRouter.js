@@ -21,10 +21,29 @@ userRouter.get(
     authController.isAuthenticatedUser,
     userController.getProfile,
 );
+
 userRouter.get(
     "/library",
     authController.isAuthenticatedUser,
     userController.library,
+);
+
+userRouter.post(
+    "/library/search",
+    authController.isAuthenticatedUser,
+    userController.searchMusic,
+);
+
+userRouter.get(
+    "/playlist-library",
+    authController.isAuthenticatedUser,
+    userController.libraryForPlaylist,
+);
+
+userRouter.post(
+    "/playlist-library/search",
+    authController.isAuthenticatedUser,
+    userController.searchPlaylist,
 );
 
 // export the router

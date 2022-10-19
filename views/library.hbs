@@ -40,7 +40,10 @@
         </li>
 
         <li>
-            <a href="/library"><button class="playlist">Browse</button></a>
+            <a href="/library"><button class="playlist">Browse music</button></a>
+        </li>
+        <li>
+            <a href="/playlist-library"><button class="playlist">Browse playlists</button></a>
         </li>
     </ul>
 
@@ -60,8 +63,22 @@
 </div>
 
 <div class="rhs">
-    <img class="note" src="/pictures/note.png">
-    <p class="playlist-name">Browse All</p>
+    <img class="note-l" src="/pictures/note.png">
+    <p class="library-name">Browse All Music</p>
+
+    <form action="/library/search" method="post" class="search">
+        <div class="info_block">
+        <input class="input_block search_block"
+            id="keyword"
+            name="keyword"
+            value="{{key}}"
+            type="text"
+            required
+        />
+        <button class="search-btn btn-hover color-9">Search</button type="submit">
+        </div>
+    </form>
+
     <table class="playlist-table" style="width:auto">
             <tr class="heading">
 		        <th class="title" style="width:20%">Title</th>
