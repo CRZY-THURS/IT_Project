@@ -231,7 +231,7 @@ body {
     margin-right: auto;
     font-size: 2rem;
     margin-top: 3.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
 }
 .playlist-table {
     width: 80%;
@@ -256,8 +256,9 @@ body {
     color: white;
 }
 .search {
-    margin-left: 47%;
-    margin-top: 2rem;
+    margin-left: 49%;
+    margin-top: 1rem;
+    margin-bottom: 2.2rem;
 }
 .search-btn {
     font-size: 1.4rem;
@@ -380,8 +381,12 @@ body {
 .error-login {
     color: red;
 }
-a:hover{
+a:hover {
     color:darkorchid;
+}
+.options {
+    color: #EEEEEE;
+    font-size: 1.2rem;
 }
 
 /* change password page */
@@ -474,7 +479,7 @@ input.atp-input {
     height: 2rem;
     float: left;
     margin-top: 3.5rem;
-    margin-left: 15%;
+    margin-left: 17%;
     overflow: hidden;
     margin-inline-end: 1rem;
 }
