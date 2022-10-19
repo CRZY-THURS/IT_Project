@@ -1,5 +1,7 @@
 # This workflow push and deploy the app onto heorku
 
+name: Deploy to heroku
+
 on: 
   workflow_dispatch:
 
