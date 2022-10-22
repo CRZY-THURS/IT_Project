@@ -370,6 +370,33 @@ body {
 }
 
 /* login page */
+.intro {
+    background: rgba(38, 24, 62, 0.4);
+    width: 100%;
+    margin: auto;
+    color: white;
+    overflow: auto;
+    position: absolute;
+    height: 95%;
+}
+.intro_msg {
+    font-size: 2rem;
+    text-align: center;
+    margin:1.5%
+}
+.intro_img {
+    width: 50%;
+    text-align: center;
+}
+.intro_links {
+    font-size: 2rem;
+    text-align: center;
+}
+.intro_link {
+    color: white;
+    text-align: center;
+    text-decoration:none;
+}
 .login {
     background: rgba(74, 74, 74, 0.3);
     height: 60%;
