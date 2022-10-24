@@ -256,7 +256,7 @@ body {
     color: white;
 }
 .search {
-    margin-left: 49%;
+    margin-left: 52%;
     margin-top: 1rem;
     margin-bottom: 2.2rem;
 }
@@ -479,7 +479,7 @@ input.atp-input {
     height: 2rem;
     float: left;
     margin-top: 3.5rem;
-    margin-left: 17%;
+    margin-left: 15%;
     overflow: hidden;
     margin-inline-end: 1rem;
 }
