@@ -5,6 +5,13 @@ const authController = require("../controllers/authController");
 
 // this router contains URLs that related to user authentication
 authRouter.get(
+    "/intro",
+    (req, res) => {
+        res.render("intro", {});
+    }
+);
+
+authRouter.get(
     "/signup",
     (req, res) => {
         res.render("signup", {});

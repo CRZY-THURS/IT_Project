@@ -14,6 +14,10 @@
     font-family: "Poppins", sans-serif;
 }
 
+input {
+    border-radius: 5px;
+  }
+
 /* CSS for main core which can support responsive */
 header{
     top: 0;
@@ -115,6 +119,12 @@ body {
     height: 5rem;
     margin-left: 47%;
     float: left;
+    overflow: hidden;
+}
+.intrologo {
+    height: 4rem;
+    margin-left: 48%;
+    text-align: center;
     overflow: hidden;
 }
 .nav-left {
@@ -298,6 +308,7 @@ body {
     color: white;
     padding: 5rem;
     padding-top: 3rem;
+    text-align: center;
 }
 .info_block {
     font-size: 2rem;
@@ -370,6 +381,34 @@ body {
 }
 
 /* login page */
+.intro {
+    scrollbar-color: red yellow;
+    background: rgba(38, 24, 62, 0.4);
+    width: 100%;
+    margin: auto;
+    color: white;
+    overflow: auto;
+    position: absolute;
+    height: 95%;
+}
+.intro_msg {
+    font-size: 2rem;
+    text-align: center;
+    margin:1.5%
+}
+.intro_img {
+    width: 50%;
+    text-align: center;
+}
+.intro_links {
+    font-size: 2rem;
+    text-align: center;
+}
+.intro_link {
+    color: white;
+    text-align: center;
+    text-decoration:none;
+}
 .login {
     background: rgba(74, 74, 74, 0.3);
     height: 60%;
@@ -377,6 +416,7 @@ body {
     margin: auto;
     color: white;
     padding: 5rem;
+    text-align: center;
 }
 .error-login {
     color: red;
