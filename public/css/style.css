@@ -139,6 +139,7 @@ body {
     height: 90%;
     width: 90%;
     background: black;
+    text-align: left;
 }
 .profile:hover {
     background: grey;
