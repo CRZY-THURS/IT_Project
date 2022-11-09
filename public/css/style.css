@@ -310,6 +310,7 @@ body {
     padding: 5rem;
     padding-top: 3rem;
     text-align: center;
+    overflow: auto;
 }
 .info_block {
     font-size: 2rem;

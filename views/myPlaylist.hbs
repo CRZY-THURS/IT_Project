@@ -79,6 +79,7 @@
     <table class="playlist-table">
         {{!-- colspan="4" --}}
             <tr class="heading">
+                <th class="title" style="text-align: center; width: 10px;">Spotify</th>
 		        <th class="title">Title</th>
 		        <th class="title">Artist</th>
 		        <th class="title">Album</th>
@@ -87,6 +88,11 @@
 
             {{#each playlist.musics}}
 	        <tr class="entity" >
+                {{#if this.link}}
+                    <td class="title" style="text-align: center; width 100%;"><a href="{{this.link}}" target="_blank"><i class="fa-brands fa-spotify"></i></a></td>
+                    {{else}}
+                    <td class="title" style="text-align: center; width 100%;">None</td>
+                {{/if}}
 		        <td class="title">{{this.title}}</td>
                 <td class="title">{{this.artist}}</td>
                 <td class="title">{{this.album}}</td>

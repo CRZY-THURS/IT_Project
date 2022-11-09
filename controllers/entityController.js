@@ -47,9 +47,9 @@ const addMusic = async (req, res) => {
             title: req.body.title,
             artist: req.body.artist,
             album: req.body.album,
+            link: req.body.link,
             genre: req.body.genre,
             add_date: date,
-            link: req.body.link,
             liked: [],
         });
 
