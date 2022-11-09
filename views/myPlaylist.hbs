@@ -64,15 +64,21 @@
 
 <div class="rhs">
     <img class="note" src="/pictures/note.png">
-    <p class="playlist-name">{{playlist.name}}</p>
-    <a href="/addmusic/{{playlist._id}}">
-        <button class="add-to-playlist-button">+ Add Music</button>
-    </a>
+    <div class="playlist-name">{{playlist.name}}
+        <span class="descript"><i class="fa-solid fa-circle-info"></i></span>
+        <span class="descript-text">Description: {{playlist.description}}</span>
+    </div>
+    
+    <button class="add-to-playlist-button">
+        <a href="/addmusic/{{playlist._id}}" class="add-msc">+ Add Music</a>
+    </button>
+    
     {{#if playlist.is_default}}{{else}}
-    <a href="javascript:a_post2();">
-        <button class="add-to-playlist-button">Delete playlist</button>
-    </a>
+        <button class="add-to-playlist-button">
+            <a href="javascript:a_post2();" class="add-msc">Delete Playlist</a>
+        </button>
     {{/if}}
+
     <div style="display:'none'" > 
 	<form id="a_post2" action="/deleteplaylist/{{playlist._id}}" method="post"></form>
     </div>
